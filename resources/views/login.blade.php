@@ -14,6 +14,7 @@
 
         <p>
             {{ Form::label('email', 'Email Address') }}
+            {{ Form::text ('email', Input::old ('email')) }}
         </p>
 
         <p>
