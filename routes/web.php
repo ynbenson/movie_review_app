@@ -16,3 +16,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('about', function(){
+    return View::make('about')->with('number_of_movies',100);
+});
+
+// route to show the login form
+Route::get('login', array('uses' => 'HomeController@showLogin'));
+
+// route to process the form 
+Route::get('login', array('uses' => 'HomeController@doLogin'));
+
+
