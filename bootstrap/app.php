@@ -52,4 +52,11 @@ $app->singleton(
 |
 */
 
+/* making debugginh easier (need ChromePHPHandler installed) */
+//if($app->environment('local')){
+//    $app->configureMonologUsing(function($monolog){
+//        $monolog->pushHandler(new \Monolog\Handler\ChromePHPHandler());
+//    });
+//}
+
 return $app;

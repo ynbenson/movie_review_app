@@ -11,20 +11,45 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::view('/','welcome');
 
 Route::get('about', function(){
+    $languages=[
+        'languages' => [
+            'Perl',
+            'PHP',
+            'Python'
+        ]
+    ];
+    \Log::debug($languages);
+//    \Log::info('Just an informational message.');
     return View::make('about')->with('number_of_movies',100);
 });
 
+/* present registration form */
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+
+/* processing registration form */
+Route::post('register', 'Auth\RegisterController@register');
+
+/* present login form */
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
+/* processing login form input */
+Route::post('login', 'Auth\LoginController@login');
+
+/*
 // route to show the login form
 Route::get('login', array('uses' => 'HomeController@showLogin'));
 
 // route to process the form 
 Route::post('login', array('uses' => 'HomeController@doLogin'));
-
-
+*/
