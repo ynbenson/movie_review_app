@@ -14,7 +14,7 @@
 
         <p>
             {{ Form::label('email', 'Email Address') }}
-            {{ Form::text ('email', Input::old ('email')) }}
+            {{ Form::text ('email', Request::get('email')) }}
         </p>
 
         <p>

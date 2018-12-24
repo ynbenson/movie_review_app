@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
-use Validator, Input, Redirect; 
+use Validator, Input, Redirect;
+use Illuminate\Support\Facades\Request;
 
 class HomeController extends BaseController
 {
