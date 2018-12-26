@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //    return view('welcome');
 //});
 
-Route::view('/','welcome');
+Route::view('/','home');
 
 Route::get('about', function(){
     $languages=[
