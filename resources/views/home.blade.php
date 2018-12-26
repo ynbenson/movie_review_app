@@ -25,25 +25,23 @@
                 margin:0px auto;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
             header {
                 margin-top: 18px;
                 border:dashed 1px #999;
+                background-color: #FFD700;
             }
 
             .header-r {
-                position: absolute;
+                text-align: right;
                 right: 10px;
                 top: 18px;
                 float: right;
-                height: 80px;
+                height: 40px;
                 width: 100%;
-                background-color: gray;
+            }
+            
+            header h1 {
+                text-align: center;
             }
             
             #l-sidebar {
@@ -56,12 +54,24 @@
 
             #r-sidebar {
                 float: right;
+                text-align: end;
                 width: 216px;
-                height:498px;
+                height: 261px;
                 border:dashed 1px #999;
                 margin:10px 0px 10px 10px;
             }
             
+            .ads-container {
+                float: right;
+                width: 216px;
+                height: 216px;
+                line-height: 216px;
+                text-align: center;
+                border:dashed 1px #999;
+                margin:10px 0px 10px 10px;
+                background-color: #00FFFF;
+            }
+
             .content {
                 float:left;
                 width:520px;
@@ -73,7 +83,12 @@
 
             footer {
                 border:dashed 1px #999;
+                background-color: #F0E68C;
                 clear:both;
+            }
+
+            footer h1 {
+                text-align: center;
             }
 
             .title {
@@ -81,7 +96,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: black;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -98,8 +113,7 @@
     <body>
         <div id="wrapper">
             <header>
-                <h1>ヘッダー</h1>
-                <!-- <div class="header-r links">
+                <div class="header-r links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -108,7 +122,8 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
-                </div> -->
+                </div>
+                <h1>ヘッダー</h1>
             </header>
 
             <div id="l-sidebar">
@@ -127,6 +142,9 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+            </div>
+            <div class="ads-container">
+                ADS
             </div>
             <div id="r-sidebar">
                 b
