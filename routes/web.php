@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //    return view('welcome');
 //});
 
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::view('/','home');
 
 Route::get('about', function(){
