@@ -19,6 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //    return view('welcome');
 //});
 
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::view('/','home');
 
 Route::get('about', function(){
@@ -35,16 +36,16 @@ Route::get('about', function(){
 });
 
 /* present registration form */
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+//Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 
 /* processing registration form */
-Route::post('register', 'Auth\RegisterController@register');
+//Route::post('register', 'Auth\RegisterController@register');
 
 /* present login form */
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+//Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 
 /* processing login form input */
-Route::post('login', 'Auth\LoginController@login');
+//Route::post('login', 'Auth\LoginController@login');
 
 /*
 // route to show the login form
