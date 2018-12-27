@@ -27,8 +27,23 @@
 
             header {
                 margin-top: 18px;
+                height: 80px;
                 border:dashed 1px #999;
                 background-color: #FFD700;
+            }
+
+            .header-logo {
+                float: left;
+                margin: auto;
+                line-height: 80px;
+                border:dashed 1px #999;
+                height: 40px;
+                width: 50%;
+            }
+
+            .header-logo h1 {
+                text-align: center;
+                line-height: 40px;
             }
 
             .header-r {
@@ -40,10 +55,46 @@
                 width: 100%;
             }
             
-            header h1 {
-                text-align: center;
+            nav{
+                display: block;
+                width: 100%;
+                margin-bottom: 5px; /**/
+                overflow: hidden;   /*おまじない*/
             }
-            
+
+            nav ul{
+                list-style: none;
+                width: 80%;
+                margin-left: 5%;
+            }
+
+            nav li{
+                width: calc(20% - 2px);
+                border-left: 1px solid orange;
+                text-align: center;
+                float: left;
+            }
+
+            nav li:last-child{
+                border-right: 1px solid orange;
+            }
+
+            nav a{
+                display: block;
+                text-decoration: none;
+                color:#313131;
+                font-size: 110%;
+                letter-spacing: 5px;
+                font-weight: 400;
+                line-height: 40px;
+            }
+
+            nav a:hover{
+                background-color: orange;
+                color: #fff;
+                transition: 0.5s;
+            }
+
             #l-sidebar {
                 float: left;
                 width: 180px;
@@ -67,7 +118,7 @@
                 height: 216px;
                 line-height: 216px;
                 text-align: center;
-                border:dashed 1px #999;
+                border: dashed 1px #999;
                 margin:10px 0px 10px 10px;
                 background-color: #00FFFF;
             }
@@ -113,6 +164,9 @@
     <body>
         <div id="wrapper">
             <header>
+                <div class="header-logo">
+                    <h1>ヘッダー</h1>
+                </div>
                 <div class="header-r links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -132,12 +186,20 @@
                         @endif
                     @endauth
                 </div>
-                <h1>ヘッダー</h1>
             </header>
-
+            <nav>
+                <ul>
+                    <li><a class=”current” href=”#”>Home</a></li>
+                    <li><a href=”#”>Content 1</a></li>
+                    <li><a href=”#”>Content 2</a></li>
+                    <li><a href=”#”>Content 3</a></li>
+                    <li><a href=”#”>Content 4</a></li>
+                </ul>
+            </nav>
             <div id="l-sidebar">
                 a
             </div>
+
             <div class="content">
                 <div class="title m-b-md">
                     Laravel Home
