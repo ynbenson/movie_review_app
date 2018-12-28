@@ -8,7 +8,10 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <link href="{{ asset('css/glide.core.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/glide.theme.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -126,7 +129,7 @@
             .content {
                 float:left;
                 width:520px;
-                height:498px;
+                /* height:498px; */
                 border:dashed 1px #999;
                 margin:10px 0px 10px 0px;
                 text-align: center;
@@ -201,6 +204,41 @@
             </div>
 
             <div class="content">
+                <h2> Latest Movies</h2>
+                <div id="latest-movies" class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide"><img src="img/movie1.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie2.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie3.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie4.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie5.png" width="165px"/></li>
+                        </ul>
+
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
+                        </div>
+                    </div>
+                </div>
+
+                <h2> Recommended Movies</h2>
+                <div id="recommended-movies" class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide"><img src="img/movie3.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie4.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie5.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie1.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie2.png" width="165px"/></li>
+                        </ul>
+
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
+                        </div>
+                    </div>
+                </div>
                 <div class="title m-b-md">
                     Laravel Home
                 </div>
@@ -222,5 +260,22 @@
             </div>
             <footer><h1>フッター</h1></footer>
         </div>
+        <script src="js/glide.min.js"></script>
+        <script>
+            var latestGlide = new Glide('#latest-movies', {
+                type: 'carousel',
+                startAt: 0,
+                perView: 3
+            })
+            latestGlide.mount();
+
+            var recommendedGlide = new Glide('#recommended-movies', {
+                type: 'carousel',
+                startAt: 0,
+                perView: 3
+            })
+            recommendedGlide.mount();
+        </script>
+
     </body>
 </html>
