@@ -13,6 +13,12 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
+    
+    'twitter' => [
+        'client_id' => env('TWITTER_KEY'),
+        'client_secret' => env('TWITTER_SECRET_KEY'),
+        'redirect' => 'http://localhost:4000/callback',
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

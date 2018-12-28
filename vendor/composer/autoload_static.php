@@ -13,8 +13,8 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'cf97c57bfe0f23854afd2f3818abb7a0' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/create_uploaded_file.php',
         '9bf37a3d0dad93e29cb4e1b1bfab04e9' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_headers_from_sapi.php',
@@ -74,6 +74,9 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'SocialiteProviders\\Twitter\\' => 27,
+            'SocialiteProviders\\Manager\\Test\\' => 32,
+            'SocialiteProviders\\Manager\\' => 27,
         ),
         'R' => 
         array (
@@ -103,9 +106,11 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         ),
         'L' => 
         array (
+            'League\\OAuth1\\' => 14,
             'League\\Flysystem\\' => 17,
             'Lcobucci\\JWT\\' => 13,
             'Laravel\\Tinker\\' => 15,
+            'Laravel\\Socialite\\' => 18,
         ),
         'J' => 
         array (
@@ -253,6 +258,18 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'SocialiteProviders\\Twitter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/socialiteproviders/twitter',
+        ),
+        'SocialiteProviders\\Manager\\Test\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/socialiteproviders/manager/tests',
+        ),
+        'SocialiteProviders\\Manager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/socialiteproviders/manager/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -297,6 +314,10 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'League\\OAuth1\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/oauth1-client/src',
+        ),
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
@@ -308,6 +329,10 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Laravel\\Socialite\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/socialite/src',
         ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
@@ -446,6 +471,7 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\SocialAuthTwitterController' => __DIR__ . '/../..' . '/app/Http/Controllers/SocialAuthTwitterController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -459,6 +485,7 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\SocialTwitterAccount' => __DIR__ . '/../..' . '/app/SocialTwitterAccount.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Barryvdh\\Debugbar\\Console\\ClearCommand' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Console/ClearCommand.php',
         'Barryvdh\\Debugbar\\Controllers\\AssetController' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Controllers/AssetController.php',
@@ -2073,6 +2100,26 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
+        'Laravel\\Socialite\\AbstractUser' => __DIR__ . '/..' . '/laravel/socialite/src/AbstractUser.php',
+        'Laravel\\Socialite\\Contracts\\Factory' => __DIR__ . '/..' . '/laravel/socialite/src/Contracts/Factory.php',
+        'Laravel\\Socialite\\Contracts\\Provider' => __DIR__ . '/..' . '/laravel/socialite/src/Contracts/Provider.php',
+        'Laravel\\Socialite\\Contracts\\User' => __DIR__ . '/..' . '/laravel/socialite/src/Contracts/User.php',
+        'Laravel\\Socialite\\Facades\\Socialite' => __DIR__ . '/..' . '/laravel/socialite/src/Facades/Socialite.php',
+        'Laravel\\Socialite\\One\\AbstractProvider' => __DIR__ . '/..' . '/laravel/socialite/src/One/AbstractProvider.php',
+        'Laravel\\Socialite\\One\\TwitterProvider' => __DIR__ . '/..' . '/laravel/socialite/src/One/TwitterProvider.php',
+        'Laravel\\Socialite\\One\\User' => __DIR__ . '/..' . '/laravel/socialite/src/One/User.php',
+        'Laravel\\Socialite\\SocialiteManager' => __DIR__ . '/..' . '/laravel/socialite/src/SocialiteManager.php',
+        'Laravel\\Socialite\\SocialiteServiceProvider' => __DIR__ . '/..' . '/laravel/socialite/src/SocialiteServiceProvider.php',
+        'Laravel\\Socialite\\Two\\AbstractProvider' => __DIR__ . '/..' . '/laravel/socialite/src/Two/AbstractProvider.php',
+        'Laravel\\Socialite\\Two\\BitbucketProvider' => __DIR__ . '/..' . '/laravel/socialite/src/Two/BitbucketProvider.php',
+        'Laravel\\Socialite\\Two\\FacebookProvider' => __DIR__ . '/..' . '/laravel/socialite/src/Two/FacebookProvider.php',
+        'Laravel\\Socialite\\Two\\GithubProvider' => __DIR__ . '/..' . '/laravel/socialite/src/Two/GithubProvider.php',
+        'Laravel\\Socialite\\Two\\GitlabProvider' => __DIR__ . '/..' . '/laravel/socialite/src/Two/GitlabProvider.php',
+        'Laravel\\Socialite\\Two\\GoogleProvider' => __DIR__ . '/..' . '/laravel/socialite/src/Two/GoogleProvider.php',
+        'Laravel\\Socialite\\Two\\InvalidStateException' => __DIR__ . '/..' . '/laravel/socialite/src/Two/InvalidStateException.php',
+        'Laravel\\Socialite\\Two\\LinkedInProvider' => __DIR__ . '/..' . '/laravel/socialite/src/Two/LinkedInProvider.php',
+        'Laravel\\Socialite\\Two\\ProviderInterface' => __DIR__ . '/..' . '/laravel/socialite/src/Two/ProviderInterface.php',
+        'Laravel\\Socialite\\Two\\User' => __DIR__ . '/..' . '/laravel/socialite/src/Two/User.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -2154,6 +2201,26 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         'League\\Flysystem\\Util\\ContentListingFormatter' => __DIR__ . '/..' . '/league/flysystem/src/Util/ContentListingFormatter.php',
         'League\\Flysystem\\Util\\MimeType' => __DIR__ . '/..' . '/league/flysystem/src/Util/MimeType.php',
         'League\\Flysystem\\Util\\StreamHasher' => __DIR__ . '/..' . '/league/flysystem/src/Util/StreamHasher.php',
+        'League\\OAuth1\\Client\\Credentials\\ClientCredentials' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Credentials/ClientCredentials.php',
+        'League\\OAuth1\\Client\\Credentials\\ClientCredentialsInterface' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Credentials/ClientCredentialsInterface.php',
+        'League\\OAuth1\\Client\\Credentials\\Credentials' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Credentials/Credentials.php',
+        'League\\OAuth1\\Client\\Credentials\\CredentialsException' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Credentials/CredentialsException.php',
+        'League\\OAuth1\\Client\\Credentials\\CredentialsInterface' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Credentials/CredentialsInterface.php',
+        'League\\OAuth1\\Client\\Credentials\\TemporaryCredentials' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Credentials/TemporaryCredentials.php',
+        'League\\OAuth1\\Client\\Credentials\\TokenCredentials' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Credentials/TokenCredentials.php',
+        'League\\OAuth1\\Client\\Server\\Bitbucket' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/Bitbucket.php',
+        'League\\OAuth1\\Client\\Server\\Magento' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/Magento.php',
+        'League\\OAuth1\\Client\\Server\\Server' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/Server.php',
+        'League\\OAuth1\\Client\\Server\\Trello' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/Trello.php',
+        'League\\OAuth1\\Client\\Server\\Tumblr' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/Tumblr.php',
+        'League\\OAuth1\\Client\\Server\\Twitter' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/Twitter.php',
+        'League\\OAuth1\\Client\\Server\\User' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/User.php',
+        'League\\OAuth1\\Client\\Server\\Uservoice' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/Uservoice.php',
+        'League\\OAuth1\\Client\\Server\\Xing' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Server/Xing.php',
+        'League\\OAuth1\\Client\\Signature\\HmacSha1Signature' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Signature/HmacSha1Signature.php',
+        'League\\OAuth1\\Client\\Signature\\PlainTextSignature' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Signature/PlainTextSignature.php',
+        'League\\OAuth1\\Client\\Signature\\Signature' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Signature/Signature.php',
+        'League\\OAuth1\\Client\\Signature\\SignatureInterface' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Signature/SignatureInterface.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\Legacy\\TestListenerForV5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV5.php',
         'Mockery\\Adapter\\Phpunit\\Legacy\\TestListenerForV6' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV6.php',
@@ -3523,6 +3590,25 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         'SebastianBergmann\\Timer\\RuntimeException' => __DIR__ . '/..' . '/phpunit/php-timer/src/RuntimeException.php',
         'SebastianBergmann\\Timer\\Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SocialiteProviders\\Manager\\Config' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Config.php',
+        'SocialiteProviders\\Manager\\ConfigTrait' => __DIR__ . '/..' . '/socialiteproviders/manager/src/ConfigTrait.php',
+        'SocialiteProviders\\Manager\\Contracts\\ConfigInterface' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Contracts/ConfigInterface.php',
+        'SocialiteProviders\\Manager\\Contracts\\Helpers\\ConfigRetrieverInterface' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Contracts/Helpers/ConfigRetrieverInterface.php',
+        'SocialiteProviders\\Manager\\Contracts\\OAuth1\\ProviderInterface' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Contracts/OAuth1/ProviderInterface.php',
+        'SocialiteProviders\\Manager\\Contracts\\OAuth2\\ProviderInterface' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Contracts/OAuth2/ProviderInterface.php',
+        'SocialiteProviders\\Manager\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Exception/InvalidArgumentException.php',
+        'SocialiteProviders\\Manager\\Exception\\MissingConfigException' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Exception/MissingConfigException.php',
+        'SocialiteProviders\\Manager\\Helpers\\ConfigRetriever' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Helpers/ConfigRetriever.php',
+        'SocialiteProviders\\Manager\\OAuth1\\AbstractProvider' => __DIR__ . '/..' . '/socialiteproviders/manager/src/OAuth1/AbstractProvider.php',
+        'SocialiteProviders\\Manager\\OAuth1\\Server' => __DIR__ . '/..' . '/socialiteproviders/manager/src/OAuth1/Server.php',
+        'SocialiteProviders\\Manager\\OAuth1\\User' => __DIR__ . '/..' . '/socialiteproviders/manager/src/OAuth1/User.php',
+        'SocialiteProviders\\Manager\\OAuth2\\AbstractProvider' => __DIR__ . '/..' . '/socialiteproviders/manager/src/OAuth2/AbstractProvider.php',
+        'SocialiteProviders\\Manager\\OAuth2\\User' => __DIR__ . '/..' . '/socialiteproviders/manager/src/OAuth2/User.php',
+        'SocialiteProviders\\Manager\\ServiceProvider' => __DIR__ . '/..' . '/socialiteproviders/manager/src/ServiceProvider.php',
+        'SocialiteProviders\\Manager\\SocialiteWasCalled' => __DIR__ . '/..' . '/socialiteproviders/manager/src/SocialiteWasCalled.php',
+        'SocialiteProviders\\Twitter\\Provider' => __DIR__ . '/..' . '/socialiteproviders/twitter/Provider.php',
+        'SocialiteProviders\\Twitter\\Server' => __DIR__ . '/..' . '/socialiteproviders/twitter/Server.php',
+        'SocialiteProviders\\Twitter\\TwitterExtendSocialite' => __DIR__ . '/..' . '/socialiteproviders/twitter/TwitterExtendSocialite.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
