@@ -139,7 +139,6 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        //\SocialiteProviders\Manager\ServiceProvider::class, 
         Laravel\Socialite\SocialiteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
