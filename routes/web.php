@@ -14,13 +14,10 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::view('/','home');
+Route::get('/redirect', 'SocialAuthTwitterController@redirect');
+Route::get('/callback', 'SocialAuthTwitterController@callback');
 
 Route::get('about', function(){
     $languages=[
