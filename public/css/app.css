@@ -10495,3 +10495,236 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+html,
+body {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
+}
+
+#wrapper {
+  width: 1060px;
+  margin: 0px auto;
+}
+
+header {
+  margin-top: 18px;
+  height: 80px;
+  border: dashed 1px #999;
+  background-color: #FFD700;
+}
+
+.header-logo {
+  float: left;
+  margin: auto;
+  line-height: 80px;
+  border: dashed 1px #999;
+  height: 40px;
+  width: 50%;
+}
+
+.header-logo h1 {
+  text-align: center;
+  line-height: 40px;
+}
+
+.header-r {
+  text-align: right;
+  right: 10px;
+  top: 18px;
+  float: right;
+  height: 40px;
+  width: 100%;
+}
+
+nav {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  /**/
+  overflow: hidden;
+  /*おまじない*/
+}
+
+nav ul {
+  list-style: none;
+  width: 80%;
+  margin-left: 5%;
+}
+
+nav li {
+  width: calc(20% - 2px);
+  border-left: 1px solid orange;
+  text-align: center;
+  float: left;
+}
+
+nav li:last-child {
+  border-right: 1px solid orange;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: #313131;
+  font-size: 110%;
+  letter-spacing: 5px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+nav a:hover {
+  background-color: orange;
+  color: #fff;
+  transition: 0.5s;
+}
+
+#r-sidebar {
+  float: right;
+}
+
+.r-sidebar-content {
+  text-align: center;
+  width: 230px;
+  height: 261px;
+  margin: 0px 10px 10px 10px;
+}
+
+.ads-container {
+  float: right;
+  width: 230px;
+  height: 230px;
+  line-height: 230px;
+  text-align: center;
+  border: dashed 1px #999;
+  margin: 10px 0px 10px 10px;
+  background-color: #00FFFF;
+}
+
+.home-content {
+  float: left;
+  width: 790px;
+  margin: 0px 10px 10px 10px;
+  text-align: center;
+}
+
+footer {
+  border: dashed 1px #999;
+  background-color: #F0E68C;
+  clear: both;
+}
+
+footer h1 {
+  text-align: center;
+}
+
+.title {
+  font-size: 84px;
+}
+
+.links > a {
+  color: black;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.m-b-md {
+  margin-bottom: 30px;
+}
+
+#mypage-profile {
+  float: left;
+  width: 25%;
+  margin: 0px 10px 10px 10px;
+  text-align: center;
+}
+
+#mypage-profile img {
+  align: center;
+}
+
+#mypage-content {
+  float: right;
+  width: 70%;
+  margin: 0px 10px 10px 10px;
+}
+
+#mypage-icon {
+  width: 65%;
+  margin: 0px 10px 10px 10px;
+}
+
+#mypage-username {
+  color: green;
+  text-align: center;
+  margin: 0px 10px 10px 10px;
+}
+
+h2.arrow {
+  position: relative;
+  padding-left: 25px;
+  text-align: left;
+}
+
+h2.arrow:before {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px black;
+}
+
+h2.arrow:after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px black;
+}
+
+h2.home {
+  position: relative;
+  padding: 0.5em;
+  background: #000000;
+  color: white;
+}
+
+h2.home::before {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px #959e9b;
+}
+
+h3.home {
+  position: relative;
+  padding: 0.5em;
+  background: #000000;
+  color: white;
+}
+
+h3.home::before {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px #959e9b;
+}
+
