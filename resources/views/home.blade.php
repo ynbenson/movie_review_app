@@ -24,7 +24,7 @@
             }
 
             #wrapper {
-                width:960px;
+                width:1060px;
                 margin:0px auto;
             }
 
@@ -98,28 +98,22 @@
                 transition: 0.5s;
             }
 
-            #l-sidebar {
-                float: left;
-                width: 180px;
-                height:498px;
-                border:dashed 1px #999;
-                margin:10px 10px 10px 0px;
-            }
-
             #r-sidebar {
                 float: right;
-                text-align: end;
-                width: 216px;
+            }
+
+            .r-sidebar-content {
+                text-align: center;
+                width: 230px;
                 height: 261px;
-                border:dashed 1px #999;
                 margin:10px 0px 10px 10px;
             }
             
             .ads-container {
                 float: right;
-                width: 216px;
-                height: 216px;
-                line-height: 216px;
+                width: 230px;
+                height: 230px;
+                line-height: 230px;
                 text-align: center;
                 border: dashed 1px #999;
                 margin:10px 0px 10px 10px;
@@ -128,10 +122,8 @@
 
             .content {
                 float:left;
-                width:520px;
-                /* height:498px; */
-                border:dashed 1px #999;
-                margin:10px 0px 10px 0px;
+                width:790px;
+                margin: 0px 10px 10px 10px;
                 text-align: center;
             }
 
@@ -161,6 +153,40 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            h2{
+                position: relative;
+                padding: 0.5em;
+                background: #000000;
+                color: white;
+            }
+
+            h2::before {
+                position: absolute;
+                content: '';
+                top: 100%;
+                left: 0;
+                border: none;
+                border-bottom: solid 15px transparent;
+                border-right: solid 20px rgb(149, 158, 155);
+            }
+
+            h3 {
+                position: relative;
+                padding: 0.5em;
+                background: #000000;
+                color: white;
+            }
+
+            h3::before {
+                position: absolute;
+                content: '';
+                top: 100%;
+                left: 0;
+                border: none;
+                border-bottom: solid 15px transparent;
+                border-right: solid 20px rgb(149, 158, 155);
             }
         </style>
     </head>
@@ -199,20 +225,16 @@
                     <li><a href=”#”>Content 4</a></li>
                 </ul>
             </nav>
-            <div id="l-sidebar">
-                a
-            </div>
-
             <div class="content">
                 <h2> Latest Movies</h2>
                 <div id="latest-movies" class="glide">
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides">
-                            <li class="glide__slide"><img src="img/movie1.png" width="165px"/></li>
-                            <li class="glide__slide"><img src="img/movie2.png" width="165px"/></li>
-                            <li class="glide__slide"><img src="img/movie3.png" width="165px"/></li>
-                            <li class="glide__slide"><img src="img/movie4.png" width="165px"/></li>
-                            <li class="glide__slide"><img src="img/movie5.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie1.png" width="240px"/></li>
+                            <li class="glide__slide"><img src="img/movie2.png" width="240px"/></li>
+                            <li class="glide__slide"><img src="img/movie3.png" width="240px"/></li>
+                            <li class="glide__slide"><img src="img/movie4.png" width="240px"/></li>
+                            <li class="glide__slide"><img src="img/movie5.png" width="240px"/></li>
                         </ul>
 
                         <div class="glide__arrows" data-glide-el="controls">
@@ -226,11 +248,11 @@
                 <div id="recommended-movies" class="glide">
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides">
-                            <li class="glide__slide"><img src="img/movie3.png" width="165px"/></li>
-                            <li class="glide__slide"><img src="img/movie4.png" width="165px"/></li>
-                            <li class="glide__slide"><img src="img/movie5.png" width="165px"/></li>
-                            <li class="glide__slide"><img src="img/movie1.png" width="165px"/></li>
-                            <li class="glide__slide"><img src="img/movie2.png" width="165px"/></li>
+                            <li class="glide__slide"><img src="img/movie3.png" width="240px"/></li>
+                            <li class="glide__slide"><img src="img/movie4.png" width="240px"/></li>
+                            <li class="glide__slide"><img src="img/movie5.png" width="240px"/></li>
+                            <li class="glide__slide"><img src="img/movie1.png" width="240px"/></li>
+                            <li class="glide__slide"><img src="img/movie2.png" width="240px"/></li>
                         </ul>
 
                         <div class="glide__arrows" data-glide-el="controls">
@@ -252,12 +274,21 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
-            <div class="ads-container">
-                ADS
-            </div>
             <div id="r-sidebar">
-                b
+                <!-- <div class="ads-container">
+                    ADS
+                </div> -->
+                <div class="r-sidebar-content">
+                    <h3>Latest Movies</h3>
+                </div>
+                <div class="r-sidebar-content">
+                    <h3>Recommended Movies</h3>
+                </div>
+                <div class="r-sidebar-content">
+                    <h3>Categories</h3>
+                </div>
             </div>
+
             <footer><h1>フッター</h1></footer>
         </div>
         <script src="js/glide.min.js"></script>
