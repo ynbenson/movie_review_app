@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
         <link href="{{ asset('css/glide.core.css') }}" rel="stylesheet">
@@ -190,7 +191,8 @@
             }
         </style>
     </head>
-    <body>
+    <body>     
+
         <div id="wrapper">
             <header>
                 <div class="header-logo">
@@ -208,6 +210,14 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+                        
+                        {{-- Display modal when user have never reviewed movie using movie review feature --}}
+                        {{-- fixme --}}
+                        <script>
+                            $(function() {
+                                $("#exampleModal").modal();//if you want you can have a timeout to hide the window after x seconds
+                            });
+                        </script>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         @if (Route::has('register'))
@@ -307,6 +317,42 @@
             })
             recommendedGlide.mount();
         </script>
+        
 
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Let's Review Some Movies!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  You can review movies easily in our Movie Reviewing Page.
+                  This allows us to analyze your movie preference and suggest movies which you'll probably like! 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Not now</button>
+                <form method="POST" action="/reviewMovies">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Go to Movie Review Page</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {{-- need these for modal window --}}
+        <script src=""
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
     </body>
 </html>

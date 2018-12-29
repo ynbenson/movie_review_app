@@ -19,8 +19,8 @@ Route::view('/','home');
 Route::view('/mypage','mypage');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
-
-Route::get('about', function(){
+Route::post('/reviewMovies', 'ReviewMoviesController@index');
+Route::post('about', function(){
     $languages=[
         'languages' => [
             'Perl',
