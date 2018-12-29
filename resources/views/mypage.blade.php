@@ -205,8 +205,8 @@
             </header>
             <nav>
                 <ul>
-                    <li><a class=”current” href=”#”>Home</a></li>
-                    <li><a href=”#”>Content 1</a></li>
+                    <li><a class=”current” href=/home>Home</a></li>
+                    <li><a href=mypage>Mypage</a></li>
                     <li><a href=”#”>Content 2</a></li>
                     <li><a href=”#”>Content 3</a></li>
                     <li><a href=”#”>Content 4</a></li>
