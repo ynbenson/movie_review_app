@@ -10604,7 +10604,7 @@ nav a:hover {
   background-color: #00FFFF;
 }
 
-.content {
+.home-content {
   float: left;
   width: 790px;
   margin: 0px 10px 10px 10px;
@@ -10639,14 +10639,69 @@ footer h1 {
   margin-bottom: 30px;
 }
 
-h2 {
+#mypage-profile {
+  float: left;
+  width: 25%;
+  margin: 0px 10px 10px 10px;
+  text-align: center;
+}
+
+#mypage-profile img {
+  align: center;
+}
+
+#mypage-content {
+  float: right;
+  width: 70%;
+  margin: 0px 10px 10px 10px;
+}
+
+#mypage-icon {
+  width: 65%;
+  margin: 0px 10px 10px 10px;
+}
+
+#mypage-username {
+  color: green;
+  text-align: center;
+  margin: 0px 10px 10px 10px;
+}
+
+h2.arrow {
+  position: relative;
+  padding-left: 25px;
+  text-align: left;
+}
+
+h2.arrow:before {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px black;
+}
+
+h2.arrow:after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px black;
+}
+
+h2.home {
   position: relative;
   padding: 0.5em;
   background: #000000;
   color: white;
 }
 
-h2::before {
+h2.home::before {
   position: absolute;
   content: "";
   top: 100%;
@@ -10656,14 +10711,14 @@ h2::before {
   border-right: solid 20px #959e9b;
 }
 
-h3 {
+h3.home {
   position: relative;
   padding: 0.5em;
   background: #000000;
   color: white;
 }
 
-h3::before {
+h3.home::before {
   position: absolute;
   content: "";
   top: 100%;

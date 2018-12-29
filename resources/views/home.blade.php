@@ -1,7 +1,7 @@
 @extends('layouts/app')
 @section('contents')
-<div class="content">
-    <h2> Latest Movies</h2>
+<div class="home-content">
+    <h2 class="home"> Latest Movies</h2>
     <div id="latest-movies" class="glide">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <h2> Recommended Movies</h2>
+    <h2 class="home"> Recommended Movies</h2>
     <div id="recommended-movies" class="glide">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
@@ -56,13 +56,13 @@
 
 <div id="r-sidebar">
     <div class="r-sidebar-content">
-        <h3>Latest Movies</h3>
+        <h3 class="home">Latest Movies</h3>
     </div>
     <div class="r-sidebar-content">
-        <h3>Recommended Movies</h3>
+        <h3 class="home">Recommended Movies</h3>
     </div>
     <div class="r-sidebar-content">
-        <h3>Categories</h3>
+        <h3 class="home">Categories</h3>
     </div>
 </div>
 
