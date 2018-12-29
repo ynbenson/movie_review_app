@@ -36,11 +36,11 @@
                         <td> December 29. 2018<td>
                     </tr>
                     <tr>
-                        <th>high evaluation score</th>
+                        <th>Evaluation Score</th>
                         <td>12345<td>
                     </tr>
                     <tr>
-                        <th>reviewed counts</th>
+                        <th>Reviewed Counts</th>
                         <td>12345<td>
                     </tr>
                 </tbody>
@@ -59,11 +59,11 @@
                         <td> December 29. 2018<td>
                     </tr>
                     <tr>
-                        <th>high evaluation score</th>
+                        <th>Evaluation Score</th>
                         <td>12345<td>
                     </tr>
                     <tr>
-                        <th>reviewed counts</th>
+                        <th>Reviewed Counts</th>
                         <td>12345<td>
                     </tr>
                 </tbody>
@@ -82,11 +82,11 @@
                         <td> December 29. 2018<td>
                     </tr>
                     <tr>
-                        <th>high evaluation score</th>
+                        <th>Evaluation Score</th>
                         <td>12345<td>
                     </tr>
                     <tr>
-                        <th>reviewed counts</th>
+                        <th>Reviewed Counts</th>
                         <td>12345<td>
                     </tr>
                 </tbody>
@@ -105,11 +105,11 @@
                         <td> December 29. 2018<td>
                     </tr>
                     <tr>
-                        <th>high evaluation score</th>
+                        <th>Evaluation Score</th>
                         <td>12345<td>
                     </tr>
                     <tr>
-                        <th>reviewed counts</th>
+                        <th>Reviewed Counts</th>
                         <td>12345<td>
                     </tr>
                 </tbody>
@@ -128,11 +128,11 @@
                         <td> December 29. 2018<td>
                     </tr>
                     <tr>
-                        <th>high evaluation score</th>
+                        <th>Evaluation Score</th>
                         <td>12345<td>
                     </tr>
                     <tr>
-                        <th>reviewed counts</th>
+                        <th>Reviewed Counts</th>
                         <td>12345<td>
                     </tr>
                 </tbody>
