@@ -16,6 +16,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::view('/','home');
+Route::view('/mypage','mypage');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
 
