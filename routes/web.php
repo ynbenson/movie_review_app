@@ -18,8 +18,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::view('/','home');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
-//Route::get('/reviewMovies', '');
-
+Route::post('/reviewMovies', 'ReviewMoviesController@index');
 Route::post('about', function(){
     $languages=[
         'languages' => [

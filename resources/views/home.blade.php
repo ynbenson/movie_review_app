@@ -306,7 +306,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Not now</button>
-                <form method="POST" action="/about">
+                <form method="POST" action="/reviewMovies">
                     @csrf
                     <button type="submit" class="btn btn-primary">Go to Movie Review Page</button>
                 </form>
