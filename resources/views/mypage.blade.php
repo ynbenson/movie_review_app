@@ -98,33 +98,57 @@
                 transition: 0.5s;
             }
 
-            #r-sidebar {
-                float: right;
-            }
-
-            .r-sidebar-content {
-                text-align: center;
-                width: 230px;
-                height: 261px;
-                margin:10px 0px 10px 10px;
-            }
-            
-            .ads-container {
-                float: right;
-                width: 230px;
-                height: 230px;
-                line-height: 230px;
-                text-align: center;
-                border: dashed 1px #999;
-                margin:10px 0px 10px 10px;
-                background-color: #00FFFF;
-            }
-
-            .content {
-                float:left;
-                width:790px;
+            #mypage-profile {
+                float: left;
+                width: 25%;
                 margin: 0px 10px 10px 10px;
                 text-align: center;
+            }
+
+            #mypage-profile img{
+                align: center;
+            }
+
+            #mypage-content {
+                float: right;
+                width: 70%;
+                margin: 0px 10px 10px 10px;
+            }
+            #mypage-icon {
+                width: 65%;
+                margin: 0px 10px 10px 10px;
+            }
+
+            #mypage-username {
+                color: green;
+                text-align: center;
+                margin: 0px 10px 10px 10px;
+            }
+
+            #mypage-content h2 {
+                position: relative;
+                padding-left: 25px;
+                text-align: left;
+            }
+
+            #mypage-content h2:before {
+                position: absolute;
+                content: '';
+                bottom: -3px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border: none;
+                border-left: solid 15px transparent;
+                border-bottom: solid 15px rgb(0, 0, 0);
+            }
+            #mypage-content h2:after {
+                position: absolute;
+                content: '';
+                bottom: -3px;
+                left: 10px;
+                width: 100%;
+                border-bottom: solid 3px rgb(0, 0, 0);
             }
 
             footer {
@@ -151,43 +175,6 @@
                 text-transform: uppercase;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            h2{
-                position: relative;
-                padding: 0.5em;
-                background: #000000;
-                color: white;
-            }
-
-            h2::before {
-                position: absolute;
-                content: '';
-                top: 100%;
-                left: 0;
-                border: none;
-                border-bottom: solid 15px transparent;
-                border-right: solid 20px rgb(149, 158, 155);
-            }
-
-            h3 {
-                position: relative;
-                padding: 0.5em;
-                background: #000000;
-                color: white;
-            }
-
-            h3::before {
-                position: absolute;
-                content: '';
-                top: 100%;
-                left: 0;
-                border: none;
-                border-bottom: solid 15px transparent;
-                border-right: solid 20px rgb(149, 158, 155);
-            }
         </style>
     </head>
     <body>
@@ -226,87 +213,34 @@
                 </ul>
             </nav>
             <div class="content">
-                <h2> Latest Movies</h2>
-                <div id="latest-movies" class="glide">
-                    <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                            <li class="glide__slide"><img src="img/movie1.png" width="240px"/></li>
-                            <li class="glide__slide"><img src="img/movie2.png" width="240px"/></li>
-                            <li class="glide__slide"><img src="img/movie3.png" width="240px"/></li>
-                            <li class="glide__slide"><img src="img/movie4.png" width="240px"/></li>
-                            <li class="glide__slide"><img src="img/movie5.png" width="240px"/></li>
-                        </ul>
-
-                        <div class="glide__arrows" data-glide-el="controls">
-                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
-                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
-                        </div>
+                <div id="mypage-profile">
+                    <div id="mypage-icon">
+                        <img src="img/himakuro.png" width="240px"/>
                     </div>
+                    <div id="mypage-username">test user name</div>
                 </div>
 
-                <h2> Recommended Movies</h2>
-                <div id="recommended-movies" class="glide">
-                    <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                            <li class="glide__slide"><img src="img/movie3.png" width="240px"/></li>
-                            <li class="glide__slide"><img src="img/movie4.png" width="240px"/></li>
-                            <li class="glide__slide"><img src="img/movie5.png" width="240px"/></li>
-                            <li class="glide__slide"><img src="img/movie1.png" width="240px"/></li>
-                            <li class="glide__slide"><img src="img/movie2.png" width="240px"/></li>
-                        </ul>
-
-                        <div class="glide__arrows" data-glide-el="controls">
-                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
-                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="title m-b-md">
-                    Laravel Home
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-            <div id="r-sidebar">
-                <!-- <div class="ads-container">
-                    ADS
-                </div> -->
-                <div class="r-sidebar-content">
-                    <h3>Latest Movies</h3>
-                </div>
-                <div class="r-sidebar-content">
-                    <h3>Recommended Movies</h3>
-                </div>
-                <div class="r-sidebar-content">
-                    <h3>Categories</h3>
+                <div id="mypage-content">
+                    <h2>Analytics</h2>
+                        <p>(円グラフ表示したい)</p>
+                        <p>Reviewed Movie Count: 123456</p>
+                        <p>LOVED IT!: 123456</p>
+                        <p>GOOD!: 123456</p>
+                        <p>OK: 123456</p>
+                        <p>BAD!: 123456</p>
+                        <p>SUCKED!: 123456</p>
+                    <h2>Recently Reviewed Movies</h2>
+                        aaaa
+                    <h2>Recommended Movies</h2>
+                        aaaa
+                    <h2>Following</h2>
+                        aaaa
+                    <h2>Followers</h2>
+                        aaaa
                 </div>
             </div>
 
             <footer><h1>フッター</h1></footer>
         </div>
-        <script src="js/glide.min.js"></script>
-        <script>
-            var latestGlide = new Glide('#latest-movies', {
-                type: 'carousel',
-                startAt: 0,
-                perView: 3
-            })
-            latestGlide.mount();
-
-            var recommendedGlide = new Glide('#recommended-movies', {
-                type: 'carousel',
-                startAt: 0,
-                perView: 3
-            })
-            recommendedGlide.mount();
-        </script>
-
     </body>
 </html>
