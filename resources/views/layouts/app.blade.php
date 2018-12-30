@@ -31,7 +31,7 @@
     <div id="wrapper">
         <header>
             <div class="header-logo">
-                <h1>ヘッダー</h1>
+                <img src="img/header-logo.png"/>
             </div>
             <div class="header-r links">
                 @auth
