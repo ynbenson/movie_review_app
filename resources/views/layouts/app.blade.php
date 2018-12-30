@@ -59,6 +59,7 @@
                 @endauth
             </div>
         </header>
+        @section('navi')
         <nav>
             <ul>
                 <li><a class=”current” href=/home>Home</a></li>
@@ -68,10 +69,13 @@
                 <li><a href=”#”>Content 4</a></li>
             </ul>
         </nav>
+        @show
         @section('contents')
             base
         @show
+        @section('footer')
         <footer><h1>フッター</h1></footer>
+        @show
     </div>
 </body>
 </html>
