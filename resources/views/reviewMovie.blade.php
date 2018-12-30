@@ -101,28 +101,29 @@
         }
     </style>
     <body>
-        <h3>TITLE</h3>
-        <p>上映期間</p>
+        <h3>{{ $movies[0]['title'] }}</h3>
+        <p>Released at {{ $movies[0]['released_at'] }}</p>
         <main>      
+            
             <div class="localNavigation">
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9e1ddCR4Zzk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $movies[0]['youtube_id']}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         
         
              <div class="content-area">
                 <div class="movie-content">
-                    {!! Html::image('img/movie1.png', 'movie1', array( 'width' => 200, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movies[0]['movie_id'].'/1.jpg', 'movie_img1', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie2.png', 'movie2', array( 'width' => 200, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movies[0]['movie_id'].'/2.jpg', 'movie_img2', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie3.png', 'movie3', array( 'width' => 200, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movies[0]['movie_id'].'/3.jpg', 'movie_img3', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie4.png', 'movie4', array( 'width' => 200, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movies[0]['movie_id'].'/4.jpg', 'movie_img4', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
             </div>
 
