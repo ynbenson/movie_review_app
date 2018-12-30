@@ -1948,6 +1948,7 @@ return array(
     'Monolog\\ResettableInterface' => $vendorDir . '/monolog/monolog/src/Monolog/ResettableInterface.php',
     'Monolog\\SignalHandler' => $vendorDir . '/monolog/monolog/src/Monolog/SignalHandler.php',
     'Monolog\\Utils' => $vendorDir . '/monolog/monolog/src/Monolog/Utils.php',
+    'MovieTableSeeder' => $baseDir . '/database/seeds/MovieTableSeeder.php',
     'Nexmo\\Account\\Balance' => $vendorDir . '/nexmo/client/src/Account/Balance.php',
     'Nexmo\\Account\\Client' => $vendorDir . '/nexmo/client/src/Account/Client.php',
     'Nexmo\\Account\\PrefixPrice' => $vendorDir . '/nexmo/client/src/Account/PrefixPrice.php',

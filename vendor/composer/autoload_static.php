@@ -2404,6 +2404,7 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         'Monolog\\ResettableInterface' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ResettableInterface.php',
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
+        'MovieTableSeeder' => __DIR__ . '/../..' . '/database/seeds/MovieTableSeeder.php',
         'Nexmo\\Account\\Balance' => __DIR__ . '/..' . '/nexmo/client/src/Account/Balance.php',
         'Nexmo\\Account\\Client' => __DIR__ . '/..' . '/nexmo/client/src/Account/Client.php',
         'Nexmo\\Account\\PrefixPrice' => __DIR__ . '/..' . '/nexmo/client/src/Account/PrefixPrice.php',
