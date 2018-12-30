@@ -23,6 +23,7 @@ Route::view('/ranking','ranking');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
 Route::post('/reviewMovies', 'ReviewMoviesController@index');
+Route::get('/reviewMovies', 'ReviewMoviesController@index');
 Route::post('about', function(){
     $languages=[
         'languages' => [

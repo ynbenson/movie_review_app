@@ -63,10 +63,16 @@
         @section('navi')
         <nav>
             <ul>
+                
                 <li><a href="mypage">Mypage</a></li>
                 <li><a href=search>Search</a></li>
                 <li><a href=ranking>Ranking</a></li>
-                <li><a href=”#”>Content 4</a></li>
+            @auth
+                {{-- FIXME: ここPOSTにしたいんだけどどうすれば良い？ --}}
+                <li><a href=reviewMovies>Matcher</a></li>
+            @else
+                <li><a href="#">Content 4</a></li>
+            @endauth
                 <li><a href="#">Content 5</a></li>
             </ul>
         </nav>
