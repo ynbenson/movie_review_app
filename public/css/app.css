@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
@@ -10514,31 +10513,25 @@ body {
 header {
   margin-top: 18px;
   height: 80px;
-  border: dashed 1px #999;
-  background-color: #FFD700;
 }
 
 .header-logo {
   float: left;
   margin: auto;
-  line-height: 80px;
-  border: dashed 1px #999;
-  height: 40px;
-  width: 50%;
+  width: 30%;
 }
 
-.header-logo h1 {
-  text-align: center;
-  line-height: 40px;
+.header-logo img {
+  float: left;
+  width: 100%;
 }
 
 .header-r {
-  text-align: right;
-  right: 10px;
-  top: 18px;
   float: right;
-  height: 40px;
-  width: 100%;
+  text-align: right;
+  line-height: 80px;
+  height: 80px;
+  width: 65%;
 }
 
 nav {

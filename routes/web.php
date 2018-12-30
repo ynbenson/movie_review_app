@@ -19,6 +19,7 @@ Route::view('/','home');
 Route::view('/mypage','mypage');
 Route::view('/search','movie_search');
 Route::get('/movies', 'MovieController@index');
+Route::view('/ranking','ranking');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
 Route::post('/reviewMovies', 'ReviewMoviesController@index');
