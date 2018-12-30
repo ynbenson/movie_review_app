@@ -31,7 +31,7 @@
     <div id="wrapper">
         <header>
             <div class="header-logo">
-                <img src="img/header-logo.png"/>
+                <a href="/"><img src="img/header-logo.png"/></a>
             </div>
             <div class="header-r links">
                 @auth
@@ -63,11 +63,11 @@
         @section('navi')
         <nav>
             <ul>
-                <li><a class=”current” href=/home>Home</a></li>
-                <li><a href=mypage>Mypage</a></li>
+                <li><a href="mypage">Mypage</a></li>
                 <li><a href=search>Search</a></li>
                 <li><a href=ranking>Ranking</a></li>
                 <li><a href=”#”>Content 4</a></li>
+                <li><a href="#">Content 5</a></li>
             </ul>
         </nav>
         @show
