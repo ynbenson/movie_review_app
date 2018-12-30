@@ -18,6 +18,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::view('/','home');
 Route::view('/mypage','mypage');
 Route::view('/search','movie_search');
+Route::view('/ranking','ranking');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
 Route::post('/reviewMovies', 'ReviewMoviesController@index');
