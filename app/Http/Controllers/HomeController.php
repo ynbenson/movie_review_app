@@ -5,11 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use Validator, Input, Redirect;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends BaseController
 {
     public function index()
     {
+//        if (Auth::check()){
+//            $user=Auth::user();
+//            echo($user['username']);
+//        } else {
+//            echo('currently not logged in');
+//        }
         return view('home');
     }
 
@@ -24,7 +32,7 @@ class HomeController extends BaseController
         // validate the info, create rules for the inputs
         $rules = array(
             'email'    => 'required|email', // make sure the email is an actual email
-            'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
+            'password' => 'required|alphaNum|min:6' // password can only be alphanumeric and has to be greater than 6 characters
         );
 
         // run the validation rules on the inputs from the form

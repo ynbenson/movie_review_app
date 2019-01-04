@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -48,6 +50,7 @@
                     {{-- Display modal when user have never reviewed movie using movie review feature --}}
                     {{-- fixme --}}
                     <script>
+                        
                         $(function() {
                             $("#exampleModal").modal();//if you want you can have a timeout to hide the window after x seconds
                         });
@@ -68,7 +71,6 @@
                 <li><a href=search>Search</a></li>
                 <li><a href=ranking>Ranking</a></li>
             @auth
-                {{-- FIXME: ここPOSTにしたいんだけどどうすれば良い？ --}}
                 <li><a href=reviewMovies>Matcher</a></li>
             @else
                 <li><a href="#">Content 4</a></li>
