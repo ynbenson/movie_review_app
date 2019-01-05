@@ -9,8 +9,8 @@ class CreateReviewHistoriesTable extends Migration
     public function up()
     {
         Schema::create('review_histories', function (Blueprint $table) {
-            $table->string('user_id');
-            $table->string('movie_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('movie_id');
             $table->smallInteger('review');
             $table->timestamps();
             $table->primary(['user_id','movie_id']);
