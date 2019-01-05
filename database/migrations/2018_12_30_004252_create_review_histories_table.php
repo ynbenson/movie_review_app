@@ -13,6 +13,7 @@ class CreateReviewHistoriesTable extends Migration
             $table->string('movie_id');
             $table->smallInteger('review');
             $table->timestamps();
+            $table->primary(['user_id','movie_id']);
         });
     }
 

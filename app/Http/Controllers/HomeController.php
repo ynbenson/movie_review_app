@@ -12,13 +12,16 @@ class HomeController extends BaseController
 {
     public function index()
     {
+        return view('home');
+        
+        
+        // $user_id == -1 if not logged in
+//        $user_id = -1;
 //        if (Auth::check()){
 //            $user=Auth::user();
-//            echo($user['username']);
-//        } else {
-//            echo('currently not logged in');
-//        }
-        return view('home');
+//            $user_id = $user['id'];
+//        } 
+//        return view('home')->with('user_id', $user_id);
     }
 
     public function showLogin()
