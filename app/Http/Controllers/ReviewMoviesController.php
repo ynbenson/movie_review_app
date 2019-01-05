@@ -20,9 +20,15 @@ class ReviewMoviesController extends Controller
             
             $movies = DB::table('movies')
                     ->whereNotIn('movie_id', $reviewed_movies_id)
-                    ->get();
+                    ->orderByRaw("RAND()")
+                    ->get();                       
+            
+            if ($movies->count() === 0) {
+                return redirect()->route('home')->with('alert', 'You have reviewed all movies in database!');
+            }
+            
             //dd($movies);
-
+            //shuffle($movies);
             return view('reviewMovie', ['movies' => $movies]);            
         } else {
             return redirect()->route('login');
