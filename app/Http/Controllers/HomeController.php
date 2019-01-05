@@ -13,13 +13,13 @@ class HomeController extends BaseController
     public function index()
     {
         $reviewed = 0;
-        if (Auth::check()){
+        if (Auth::check()){ 
             $user_id = Auth::user()->id;
-            if (DB::table('review_histories')->where('user_id','=',$user_id)->get()){
+            if (DB::table('review_histories')->where('user_id','=',$user_id)->count() != 0){
                 $reviewed = 1;
             }
         }
-        
+
         return view('home', ['reviewed' => $reviewed]);
        
 //        $user_id = -1;
