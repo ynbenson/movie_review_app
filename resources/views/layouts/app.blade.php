@@ -47,14 +47,6 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                    {{-- Display modal when user have never reviewed movie using movie review feature --}}
-                    {{-- fixme --}}
-                    <script>
-                        
-                        $(function() {
-                            $("#exampleModal").modal();//if you want you can have a timeout to hide the window after x seconds
-                        });
-                    </script>
                 @else
                     <a href="{{ route('login') }}">Login</a>
                     @if (Route::has('register'))

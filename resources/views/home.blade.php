@@ -66,6 +66,19 @@
     </div>
 </div>
 
+
+
+@if (Auth::check())
+    @if ($reviewed  = 0)
+        <script>
+            $(function() {
+                $("#exampleModal").modal();//if you want you can have a timeout to hide the window after x seconds
+            });
+        </script>
+    @endif
+@endif
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -73,7 +86,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
                     @if (Auth::check())
-                        Welcome {{ Auth::user()->username }}!
+                        Welcome {{ Auth::user()->username }}!         
                     @endif
                     Let's Review Some Movies!
                 </h5>

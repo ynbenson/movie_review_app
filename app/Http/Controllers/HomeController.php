@@ -6,16 +6,22 @@ use Illuminate\Routing\Controller as BaseController;
 use Validator, Input, Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
-
+use DB;
 
 class HomeController extends BaseController
 {
     public function index()
     {
-        return view('home');
+        $reviewed = 0;
+        if (Auth::check()){
+            $user_id = Auth::user()->id;
+            if (DB::table('review_histories')->where('user_id','=',$user_id)->get()){
+                $reviewed = 1;
+            }
+        }
         
-        
-        // $user_id == -1 if not logged in
+        return view('home', ['reviewed' => $reviewed]);
+       
 //        $user_id = -1;
 //        if (Auth::check()){
 //            $user=Auth::user();
@@ -75,3 +81,4 @@ class HomeController extends BaseController
 }
 
 
+?>
