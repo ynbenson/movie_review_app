@@ -27,7 +27,6 @@ Route::get('/movies', 'MovieController@index');
 Route::view('/ranking','ranking');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
-Route::post('/reviewMovies', 'ReviewMoviesController@index');
 Route::post('reviewMovies', 'ReviewMoviesController@rateMovie')->name('ReviewMovies.rateMovies');
 Route::get('about', function(){
 //    $languages=[
