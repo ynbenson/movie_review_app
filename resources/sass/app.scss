@@ -23,12 +23,14 @@ html, body {
 }
 
 #wrapper {
-    width:1060px;
+    // width:1060px;
+    width: 100%;
     margin:0px auto;
 }
 
 header {
-    margin-top: 18px;
+    // margin-top: 18px;
+    background-color: #000000;
     height: 80px;
 }
 
@@ -36,11 +38,12 @@ header {
     float: left;
     margin: auto;
     width: 30%;
+    height: 80px;
 }
 
 .header-logo img {
     float: left;
-    width: 100%;
+    width: 80%;
 }
 
 .header-r {
@@ -49,6 +52,16 @@ header {
     line-height: 80px;
     height: 80px;
     width: 65%;
+}
+
+header .links > a {
+    color: #64F9C1;
+    padding: 0 25px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 nav{
@@ -115,9 +128,80 @@ nav a:hover{
 
 .home-content {
   float: left;
-  width: 790px;
+  width: 100%;
   margin: 0px 10px 10px 10px;
-  text-align: center;
+}
+
+.latest-movies-box{
+    float: left;
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#ffb03c, #ff708d);
+    background: -webkit-linear-gradient(#ffb03c, #ff708d);
+    background: linear-gradient(to right, #ffb03c, #ff708d);
+    color: #FFF;
+    width: 100%;
+    height: 360px;
+}
+
+.latest-movies-box p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+.popular-movies-box{
+    float: left;
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#C2EEFF, #ffb03c);
+    background: -webkit-linear-gradient(#C2EEFF, #ffb03c);
+    background: linear-gradient(to right, #C2EEFF, #ffb03c);
+    color: #000000;
+    width: 100%;
+    height: 360px;
+}
+
+.latest-movies-box p {
+    margin: 0; 
+    padding: 0;
+}
+
+.home-movie-thumbnail {
+    float: left;
+    width: 40%;
+    margin: 0 0 0 15%;
+}
+
+.latest-movie-description {
+    float: right;
+    width: 30%;
+    margin: 0 10% 0 0;
+}
+
+p.home-movie-title {
+    text-align: center;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+p.home-movie-evaluation {
+    float: left;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    margin: 0 15% 0 0; 
+    padding: 0;
+}
+
+p.home-movie-date {
+    float: left;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    margin: 0 15% 0 0; 
+    padding: 0;
 }
 
 footer {
@@ -134,15 +218,7 @@ footer h1 {
     font-size: 84px;
 }
 
-.links > a {
-    color: black;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-}
+
 
 .m-b-md {
     margin-bottom: 30px;
@@ -177,47 +253,12 @@ footer h1 {
 }
 
 //　Headers
-h2.arrow {
-  position: relative;
-  padding-left: 25px;
-  text-align: left;
-}
-
-h2.arrow:before {
-  position: absolute;
-  content: '';
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border: none;
-  border-left: solid 15px transparent;
-  border-bottom: solid 15px rgb(0, 0, 0);
-}
-h2.arrow:after {
-  position: absolute;
-  content: '';
-  bottom: -3px;
-  left: 10px;
-  width: 100%;
-  border-bottom: solid 3px rgb(0, 0, 0);
-}
-
-h2.home{
-  position: relative;
-  padding: 0.5em;
-  background: #000000;
-  color: white;
-}
-
-h2.home::before {
-  position: absolute;
-  content: '';
-  top: 100%;
-  left: 0;
-  border: none;
-  border-bottom: solid 15px transparent;
-  border-right: solid 20px rgb(149, 158, 155);
+.home-content h2 {
+    size: 30px;
+    font-weight: 700;
+    font-style: italic;
+    text-align: left;
+    width: 100%;
 }
 
 h3.home {

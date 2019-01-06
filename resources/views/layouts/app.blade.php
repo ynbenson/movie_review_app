@@ -55,6 +55,9 @@
                 @endauth
             </div>
         </header>
+        @section('contents')
+            base
+        @show
         @section('navi')
         <nav>
             <ul>
@@ -70,9 +73,6 @@
                 <li><a href="#">Content 5</a></li>
             </ul>
         </nav>
-        @show
-        @section('contents')
-            base
         @show
         @section('footer')
         <footer><h1>フッター</h1></footer>
