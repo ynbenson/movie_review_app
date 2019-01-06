@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -31,7 +33,7 @@
     <div id="wrapper">
         <header>
             <div class="header-logo">
-                <a href="/"><img src="img/header-logo.png"/></a>
+                <a href="{{ route('home') }}"><img src="img/header-logo.png"/></a>
             </div>
             <div class="header-r links">
                 @auth
@@ -45,13 +47,6 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                    {{-- Display modal when user have never reviewed movie using movie review feature --}}
-                    {{-- fixme --}}
-                    <script>
-                        $(function() {
-                            $("#exampleModal").modal();//if you want you can have a timeout to hide the window after x seconds
-                        });
-                    </script>
                 @else
                     <a href="{{ route('login') }}">Login</a>
                     @if (Route::has('register'))
@@ -63,10 +58,15 @@
         @section('navi')
         <nav>
             <ul>
+                
                 <li><a href="mypage">Mypage</a></li>
                 <li><a href=search>Search</a></li>
                 <li><a href=ranking>Ranking</a></li>
-                <li><a href=”#”>Content 4</a></li>
+            @auth
+                <li><a href=reviewMovies>Matcher</a></li>
+            @else
+                <li><a href="#">Content 4</a></li>
+            @endauth
                 <li><a href="#">Content 5</a></li>
             </ul>
         </nav>
