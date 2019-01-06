@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-Route::view('/','home');
+Route::get('/','HomeController@index');
 Route::get('/mypage', 'MypageController@index')->name('mypage');
 Route::post('/upload_image', 'MypageController@upload_image');
 Route::view('/search','movie_search');

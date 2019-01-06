@@ -36,8 +36,6 @@ class ReviewMoviesController extends Controller
     }
     
     public function rateMovie(Request $request){
-//        $name = $request->likedBtn;
-//        return $name;
         dd($request->all());
     }
 }

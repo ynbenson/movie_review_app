@@ -74,7 +74,7 @@
 
 
 
-@if (Auth::check())
+@if (Auth::guard()->check())
     @if ($reviewed === 0)
         <script>
             $(function() {

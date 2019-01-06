@@ -137,13 +137,13 @@
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <div id="outer">
     <div class="inner">
-        <button type='submit' class='square_btn btn_like' name='likedBtn' value='lala-land'>Liked it!</button>
+        <button type='submit' class='square_btn btn_like' name='likedBtn' value='liked'>Liked it!</button>
     </div>
     <div class="inner">
-        <button type='submit' class='square_btn btn_ok' name='okBtn' value='lala-land2'>OK</button>
+        <button type='submit' class='square_btn btn_ok' name='okBtn' value='ok'>OK</button>
     </div>
     <div class="inner">
-        <button type='submit' class='square_btn btn_hate' name='suckedBtn' value='lala-land3'>Sucked</button>
+        <button type='submit' class='square_btn btn_hate' name='suckedBtn' value='sucked'>Sucked</button>
     </div>
 </div>
 {!! Form::close() !!}
