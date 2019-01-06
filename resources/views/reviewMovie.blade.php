@@ -136,9 +136,15 @@
 {!! Form::open(['route' => 'ReviewMovies.rateMovies']) !!}
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <div id="outer">
-    <div class="inner">{!! Form::submit('Liked it!', ['class' => 'square_btn btn_like', 'name' => 'likedBtn', 'value' => 'lala-land']) !!}</div>
-    <div class="inner">{!! Form::submit('OK', ['class' => 'square_btn btn_ok']) !!}</div>
-    <div class="inner">{!! Form::submit('Sucked', ['class' => 'square_btn btn_hate']) !!}</div>
+    <div class="inner">
+        <button type='submit' class='square_btn btn_like' name='likedBtn' value='lala-land'>Liked it!</button>
+    </div>
+    <div class="inner">
+        <button type='submit' class='square_btn btn_ok' name='okBtn' value='lala-land2'>OK</button>
+    </div>
+    <div class="inner">
+        <button type='submit' class='square_btn btn_hate' name='suckedBtn' value='lala-land3'>Sucked</button>
+    </div>
 </div>
 {!! Form::close() !!}
 
