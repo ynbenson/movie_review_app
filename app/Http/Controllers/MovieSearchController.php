@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Request;
 
-class MypageController extends BaseController
+class MovieSearchController extends BaseController
 {
     public function index()
     {
