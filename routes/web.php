@@ -20,12 +20,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-<<<<<<< HEAD
-Route::view('/','home');
-=======
 Route::get('/','HomeController@index');
 Route::get('/mypage', 'MypageController@index')->name('mypage');
->>>>>>> dev_2019_jan3
 Route::post('/upload_image', 'MypageController@upload_image');
 Route::view('/search','movie_search');
 Route::get('/movies', 'MovieController@index');
