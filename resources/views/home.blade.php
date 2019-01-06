@@ -74,7 +74,7 @@
 
 
 
-@if (Auth::guard()->check())
+@if (Auth::check())
     @if ($reviewed === 0)
         <script>
             $(function() {
@@ -106,7 +106,7 @@
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Not now</button>
-            <a href="{{ url('/reviewMovies/') }}" class="btn btn-primary">Go to Movie Review Page</a>
+            <a href="{{ route('reviewMoviesPage') }}" class="btn btn-primary">Go to Movie Review Page</a>
             </div>
         </div>
     </div>

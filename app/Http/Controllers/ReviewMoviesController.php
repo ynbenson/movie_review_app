@@ -16,13 +16,11 @@ class ReviewMoviesController extends Controller
                 ->where('user_id',$user_id)
                 ->get();
         $reviewed_movies_id = $reviewed_movies->pluck('movie_id')->all();
-
         $movie = DB::table('movies')
                 ->whereNotIn('movie_id', $reviewed_movies_id)
                 ->orderByRaw("RAND()")
                 ->limit(1)
                 ->get();                       
-
         if ($movie->count() === 0) {
             return redirect()->route('home')->with('alert', 'You have reviewed all movies in database!');
         }
@@ -31,24 +29,7 @@ class ReviewMoviesController extends Controller
     }
     
     public function index(){
-        $user_id = Auth::user()->id;
-        $reviewed_movies = DB::table('review_histories')
-            ->select('movie_id')
-            ->where('user_id',$user_id)
-            ->get();
-        $reviewed_movies_id = $reviewed_movies->pluck('movie_id')->all();
-
-        $movies = DB::table('movies')
-            ->whereNotIn('movie_id', $reviewed_movies_id)
-            ->orderByRaw("RAND()")
-            ->get();
-
-        if ($movies->count() === 0) {
-            return redirect()->route('home')->with('alert', 'You have reviewed all movies in database!');
-
-        }
-
-        return view('reviewMovie', ['movies' => $movies]);
+        return $this->getMovie();   
     }
     
     public function rateMovie(Request $request){

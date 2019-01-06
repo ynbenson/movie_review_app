@@ -21,13 +21,6 @@ class HomeController extends BaseController
         }
 
         return view('home', ['reviewed' => $reviewed]);
-       
-//        $user_id = -1;
-//        if (Auth::check()){
-//            $user=Auth::user();
-//            $user_id = $user['id'];
-//        } 
-//        return view('home')->with('user_id', $user_id);
     }
 
     public function showLogin()

@@ -14,10 +14,11 @@
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/mypage', 'MypageController@index')->name('mypage');
     Route::get('/reviewMovies', 'ReviewMoviesController@index');
+    
 });
 
 Auth::routes();
-
+Route::get('/reviewMovies', 'ReviewMoviesController@index')->name('reviewMoviesPage');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/','HomeController@index');
