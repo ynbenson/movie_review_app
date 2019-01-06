@@ -70,10 +70,16 @@
             transform: translateY(2px);
         }
         
-        .btn_like {
+        .btn_exc {
             background: #f7f7f7;
             border-left: solid 6px #009900;/*左線*/
             color: #009900;/*文字色*/
+        }
+        
+        .btn_great {
+            background: #f7f7f7;
+            border-left: solid 6px #66ccff;/*左線*/
+            color: #66ccff;/*文字色*/
         }
         
         .btn_ok {
@@ -82,7 +88,13 @@
             color: gray;/*文字色*/
         }
         
-        .btn_hate {
+        .btn_poor {
+            background: #f7f7f7;
+            border-left: solid 6px #ff7c5c;/*左線*/
+            color: #ff7c5c;/*文字色*/
+        }        
+        
+        .btn_awful {
             background: #f7f7f7;
             border-left: solid 6px #ff3333;/*左線*/
             color: #ff3333;/*文字色*/
@@ -101,28 +113,28 @@
         }
     </style>
     <body>
-        <h3>{{ $movies->first()->title }}</h3>
-        <p>Released at {{ $movies->first()->released_at }}</p>
+        <h3>{{ $movie->first()->title }}</h3>
+        <p>Released at {{ $movie->first()->released_at }}</p>
         <main>      
             
             <div class="localNavigation">
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $movies->first()->youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $movie->first()->youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         
             <div class="content-area">
                 <div class="movie-content">
-                    {!! Html::image('img/movie'.$movies->first()->movie_id.'/1.jpg', 'movie_img1', array( 'width' => 220, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movie->first()->movie_id.'/1.jpg', 'movie_img1', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie'.$movies->first()->movie_id.'/2.jpg', 'movie_img2', array( 'width' => 220, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movie->first()->movie_id.'/2.jpg', 'movie_img2', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie'.$movies->first()->movie_id.'/3.jpg', 'movie_img3', array( 'width' => 220, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movie->first()->movie_id.'/3.jpg', 'movie_img3', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie'.$movies->first()->movie_id.'/4.jpg', 'movie_img4', array( 'width' => 220, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movie->first()->movie_id.'/4.jpg', 'movie_img4', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
             </div>
 
@@ -135,10 +147,23 @@
 
 {!! Form::open(['route' => 'ReviewMovies.rateMovies']) !!}
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+<input type="hidden" name="movie_id" value="{{ $movie->first()->movie_id }}">
 <div id="outer">
-    <div class="inner">{!! Form::submit('Liked it!', ['class' => 'square_btn btn_like', 'name' => 'likedBtn', 'value' => 'lala-land']) !!}</div>
-    <div class="inner">{!! Form::submit('OK', ['class' => 'square_btn btn_ok']) !!}</div>
-    <div class="inner">{!! Form::submit('Sucked', ['class' => 'square_btn btn_hate']) !!}</div>
+    <div class="inner">
+        <button type='submit' class='square_btn btn_exc' name='btn' value='exc'>Excellent</button>
+    </div>
+    <div class="inner">
+        <button type='submit' class='square_btn btn_great' name='btn' value='great'>Great</button>
+    </div>
+    <div class="inner">
+        <button type='submit' class='square_btn btn_ok' name='btn' value='ok'>OK</button>
+    </div>
+    <div class="inner">
+        <button type='submit' class='square_btn btn_poor' name='btn' value='poor'>Poor</button>
+    </div>
+    <div class="inner">
+        <button type='submit' class='square_btn btn_awful' name='btn' value='awful'>Awful</button>
+    </div>
 </div>
 {!! Form::close() !!}
 
