@@ -6,56 +6,165 @@
 @endif
 
 @section('contents')
-<div class="home-content">
-    <h2 class="home"> Latest Movies</h2>
-    <div id="latest-movies" class="glide">
-        <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide"><img src="img/movie1.png" width="240px"/></li>
-                <li class="glide__slide"><img src="img/movie2.png" width="240px"/></li>
-                <li class="glide__slide"><img src="img/movie3.png" width="240px"/></li>
-                <li class="glide__slide"><img src="img/movie4.png" width="240px"/></li>
-                <li class="glide__slide"><img src="img/movie5.png" width="240px"/></li>
-            </ul>
+<div class="latest-movies-box">
+    <div class="home-content">
+        <h2 class="home"> Latest Movies</h2>
+        <div id="latest-movies" class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie1.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie2.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie3.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie4.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie5.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                </ul>
 
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
-            </div>
-        </div>
-    </div>
-
-    <h2 class="home"> Recommended Movies</h2>
-    <div id="recommended-movies" class="glide">
-        <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide"><img src="img/movie3.png" width="240px"/></li>
-                <li class="glide__slide"><img src="img/movie4.png" width="240px"/></li>
-                <li class="glide__slide"><img src="img/movie5.png" width="240px"/></li>
-                    <li class="glide__slide"><img src="img/movie1.png" width="240px"/></li>
-                <li class="glide__slide"><img src="img/movie2.png" width="240px"/></li>
-            </ul>
-
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="popular-movies-box">
+    <div class="home-content">
+        <h2 class="home"> Most Popular Movies</h2>
+        <div id="recommended-movies" class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie1.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie2.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie3.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie4.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="home-movie-thumbnail">
+                            <img src="img/movie5.png" width="240px"/>
+                        </div>
+                        <div class="latest-movie-description">
+                            <p class="home-movie-title">Movie Title</p>
+                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
+                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
+                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="js/glide.min.js"></script>
 <script>
     var latestGlide = new Glide('#latest-movies', {
         type: 'carousel',
         startAt: 0,
-        perView: 3
+        perView: 1,
+        autoplay: 3000
     })
     latestGlide.mount();
     var recommendedGlide = new Glide('#recommended-movies', {
         type: 'carousel',
         startAt: 0,
-        perView: 3
+        perView: 1,
+        autoplay: 5000
     })
     recommendedGlide.mount();
 </script>
