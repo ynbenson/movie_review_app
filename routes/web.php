@@ -11,12 +11,16 @@
 |
 */
 
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/mypage', 'MypageController@index')->name('mypage');
+    Route::get('/reviewMovies', 'ReviewMoviesController@index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::view('/','home');
-Route::get('/mypage', 'MypageController@index')->name('mypage');
 Route::post('/upload_image', 'MypageController@upload_image');
 Route::view('/search','movie_search');
 Route::get('/movies', 'MovieController@index');
@@ -24,7 +28,6 @@ Route::view('/ranking','ranking');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
 Route::post('/reviewMovies', 'ReviewMoviesController@index');
-Route::get('/reviewMovies', 'ReviewMoviesController@index');
 Route::post('reviewMovies', 'ReviewMoviesController@rateMovie')->name('ReviewMovies.rateMovies');
 Route::get('about', function(){
 //    $languages=[
