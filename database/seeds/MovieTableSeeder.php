@@ -26,14 +26,14 @@ class MovieTableSeeder extends Seeder
         Movie::create([
             'title' => "LIAR GAME The Final Stage",
             'genre' => "drama",
-            'released_at' => "2013-05-13",
+            'released_at' => "2010-03-06",
             'youtube_id' => "ufaE3iKdzVE"
         ]);
         
         Movie::create([
             'title' => "Deadpool",
             'genre' => "action",
-            'released_at' => "2015-08-04",
+            'released_at' => "2016-02-12",
             'youtube_id' => "ONHBaC-pfsk"
         ]);
     }

@@ -75,7 +75,7 @@
 
 
 @if (Auth::check())
-    @if ($reviewed == 0)
+    @if ($reviewed === 0)
         <script>
             $(function() {
                 $("#exampleModal").modal();//if you want you can have a timeout to hide the window after x seconds

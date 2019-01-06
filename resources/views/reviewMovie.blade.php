@@ -101,34 +101,30 @@
         }
     </style>
     <body>
-        <h3>{{ $movies[0]->title }}</h3>
-        <p>Released at {{ $movies[0]->released_at }}</p>
+        <h3>{{ $movies->first()->title }}</h3>
+        <p>Released at {{ $movies->first()->released_at }}</p>
         <main>      
             
             <div class="localNavigation">
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $movies[0]->youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $movies->first()->youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         
-        
-             <div class="content-area">
+            <div class="content-area">
                 <div class="movie-content">
-                    {!! Html::image('img/movie'.$movies[0]->movie_id.'/1.jpg', 'movie_img1', array( 'width' => 220, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movies->first()->movie_id.'/1.jpg', 'movie_img1', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie'.$movies[0]->movie_id.'/2.jpg', 'movie_img2', array( 'width' => 220, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movies->first()->movie_id.'/2.jpg', 'movie_img2', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie'.$movies[0]->movie_id.'/3.jpg', 'movie_img3', array( 'width' => 220, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movies->first()->movie_id.'/3.jpg', 'movie_img3', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
                 <div class="movie-content">
-                    {!! Html::image('img/movie'.$movies[0]->movie_id.'/4.jpg', 'movie_img4', array( 'width' => 220, 'height' => 200 )) !!}
+                    {!! Html::image('img/movie'.$movies->first()->movie_id.'/4.jpg', 'movie_img4', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
             </div>
-
-          
-
 
         </main>
     </body>
@@ -137,11 +133,15 @@
 {{-- buttons for reviewing --}}
 @section('footer')
 
+{!! Form::open(['route' => 'ReviewMovies.rateMovies']) !!}
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
 <div id="outer">
-  <div class="inner"><button type="submit" class="square_btn btn_like">Liked it!</button></div>
-  <div class="inner"><button type="submit" class="square_btn btn_ok">OK</button></div>
-  <div class="inner"><button type="submit" class="square_btn btn_hate">Sucked</button></div>
+    <div class="inner">{!! Form::submit('Liked it!', ['class' => 'square_btn btn_like', 'name' => 'likedBtn', 'value' => 'lala-land']) !!}</div>
+    <div class="inner">{!! Form::submit('OK', ['class' => 'square_btn btn_ok']) !!}</div>
+    <div class="inner">{!! Form::submit('Sucked', ['class' => 'square_btn btn_hate']) !!}</div>
 </div>
+{!! Form::close() !!}
+
 {{--
 <div id="outer">
   <div class="inner"><button type="submit" class="square_btn">Interested in watching it!</button></div>

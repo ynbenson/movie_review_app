@@ -24,15 +24,16 @@ Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
 Route::post('/reviewMovies', 'ReviewMoviesController@index');
 Route::get('/reviewMovies', 'ReviewMoviesController@index');
+Route::post('reviewMovies', 'ReviewMoviesController@rateMovie')->name('ReviewMovies.rateMovies');
 Route::get('about', function(){
-    $languages=[
-        'languages' => [
-            'Perl',
-            'PHP',
-            'Python'
-        ]
-    ];
-    \Log::debug($languages);
+//    $languages=[
+//        'languages' => [
+//            'Perl',
+//            'PHP',
+//            'Python'
+//        ]
+//    ];
+//    \Log::debug($languages);
 //    \Log::info('Just an informational message.');
     return View::make('about')->with('number_of_movies',100);
 });

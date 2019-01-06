@@ -33,6 +33,11 @@ class ReviewMoviesController extends Controller
         } else {
             return redirect()->route('login');
         }
-
+    }
+    
+    public function rateMovie(Request $request){
+//        $name = $request->likedBtn;
+//        return $name;
+        dd($request->all());
     }
 }
