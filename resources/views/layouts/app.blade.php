@@ -68,10 +68,11 @@
                 <li><a href=ranking>Ranking</a></li>
             @auth
                 <li><a href=reviewMovies>Matcher</a></li>
+                <li><a href="{{ route('movies.index') }}">Movies</a></li>
             @else
                 <li><a href="#">Content 4</a></li>
-            @endauth
                 <li><a href="#">Content 5</a></li>
+            @endauth
             </ul>
         </nav>
         @show
