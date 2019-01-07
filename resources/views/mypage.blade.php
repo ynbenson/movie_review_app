@@ -9,13 +9,111 @@
         width: 50%;
         text-align: center;
     }
+
+    #ranking-content {
+        float: right;
+        width: 71%;
+        margin: 20px 10px 10px 10px;
+    }
+
+    .movie-search-result-description {
+        margin: 3px 10px 5px 20px;
+        float: right;
+    }
+
+    .movie-search-result img {
+        width: 50%;
+        height: 150px;
+        float: left;
+    }
+
+    .most-reviewed-user-ranking {
+        width: 100%;
+        margin: 5px 10px 5px 10px;
+        border-bottom: 3px solid #000000;
+    }
+
+    .most-reviewed-user-ranking img {
+        width: 20%;
+    }
+
+    .most-reviewed-user-ranking-description {
+        float: right;
+        width: 75%;
+    }
+
+    .popular-user-ranking {
+        width: 100%;
+        margin: 5px 10px 5px 10px;
+        border-bottom: 3px solid #000000;
+    }
+
+    .popular-user-ranking img {
+        width: 20%;
+    }
+
+    .popular-user-ranking-description {
+        float: right;
+        width: 75%;
+    }
+
+    .ranking-tabs {
+        padding-bottom: 40px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        margin: 0 0 0 0;
+    }
+
+    .tab_item {
+        width: calc(100%/3);
+        height: 50px;
+        border-bottom: 3px solid #000000;
+        background-color: #d9d9d9;
+        line-height: 50px;
+        font-size: 16px;
+        text-align: center;
+        color: #565656;
+        display: block;
+        float: left;
+        text-align: center;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
+
+    .tab_item:hover {
+        opacity: 0.75;
+    }
+
+    input[name="tab_item"] {
+        display: none;
+    }
+
+    .tab_content {
+        display: none;
+        padding: 20px 40px 0;
+        clear: both;
+        overflow: hidden;
+    }
+
+    #mypage-overview-tab:checked ~ #mypage-overview-tab-content,
+    #mypage-movie-tab:checked ~ #mypage-movie-tab-content,
+    #mypage-follow-tab:checked ~ #mypage-follow-tab-content {
+        display: block;
+    }
+
+    .tabs input:checked + .tab_item {
+        background-color: #5ab4bd;
+        color: #fff;
+    }
 </style>
 <div id="mypage-profile">
     <div id="mypage-icon">
         @if ($user->avatar_image)
             <img src="{{ asset('storage/avatar/' . $user->avatar_image) }}" alt="avatar" width="240px" />
+        @else
+            <!-- <img src="img/himakuro.png" width="240px"/> -->
         @endif
-        <!-- <img src="img/himakuro.png" width="240px"/> -->
     </div>
     <div id="mypage-username">test user name</div>
 
@@ -47,29 +145,125 @@
     {!! Form::close() !!}
 </div>
 
-<div id="mypage-content">
-    <h2 class="arrow">Analytics</h2>
-    <div id="mypage-chart-wrapper">
-        <div class="mypage-chart">
-            <canvas id="evaluation-chart"></canvas>
-            <p>Total Evaluated Movie Count: 123456</p>
+<div id="ranking-content">
+    <div class="ranking-tabs">
+        <input id="mypage-overview-tab" type="radio" name="tab_item" checked>
+        <label class="tab_item" for="mypage-overview-tab">Overview</label>
+
+        <input id="mypage-movie-tab" type="radio" name="tab_item" onclick="resizeWindow();">
+        <label class="tab_item" for="mypage-movie-tab">Movies</label>
+
+        <input id="mypage-follow-tab" type="radio" name="tab_item">
+        <label class="tab_item" for="mypage-follow-tab">Follow & Followers</label>
+
+        <div class="tab_content" id="mypage-overview-tab-content">
+            <div class="tab-content-description">
+                <div id="mypage-chart-wrapper">
+                    <div class="mypage-chart">
+                        <canvas id="evaluation-chart"></canvas>
+                        <p>Total Evaluated Movie Count: 123456</p>
+                    </div>
+                    <div class="mypage-chart">
+                        <canvas id="reviewed-chart"></canvas>
+                        <p>Total Reviewed Movie Count: 123456</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mypage-chart">
-            <canvas id="reviewed-chart"></canvas>
-            <p>Total Reviewed Movie Count: 123456</p>
+
+        <div class="tab_content" id="mypage-movie-tab-content">
+            <div class="tab_content_description">
+                <div id="mypage-reviewed-movies" class="glide">
+                    <h2>Recently Reviewed Movies</h2>
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            @for ($i = 1; $i <= 5; $i++)
+                            <?php $image = "img/movie$i.png"; ?>
+                                <li class="glide__slide">
+                                    <img src="{{$image}}" width="200px" height="120px"/>
+                                </li>
+                            @endfor
+                        </ul>
+
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="mypage-recommended-movies" class="glide">
+                    <h2>Recommended Movies</h2>
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            @for ($i = 5; $i >= 0; $i--)
+                            <?php $image = "img/movie$i.png"; ?>
+                                <li class="glide__slide">
+                                    <img src="{{$image}}" width="200px" height="120px"/>
+                                </li>
+                            @endfor
+                        </ul>
+
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<</button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab_content" id="mypage-follow-tab-content">
+            <div class="tab_content_description">
+                @for ($i = 1; $i <= 5; $i++)
+                    <div class="popular-user-ranking">
+                        <h3>User Name {{$i}}</h3>
+                        <img src="img/himakuro.png">
+                        <div class="popular-user-ranking-description">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Total Movie Reviewed</th>
+                                        <td>123456<td>
+                                    </tr>
+                                    <tr>
+                                        <th>Following count</th>
+                                        <td>123456<td>
+                                    </tr>
+                                    <tr>
+                                        <th>Followed users count</th>
+                                        <td>123456<td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                @endfor
+            </div>
         </div>
     </div>
-    <h2 class="arrow">Recently Reviewed Movies</h2>
-        aaaa
-    <h2 class="arrow">Recommended Movies</h2>
-        aaaa
-    <h2 class="arrow">Following</h2>
-        aaaa
-    <h2 class="arrow">Followers</h2>
-        aaaa
 </div>
 
+<script src="js/glide.min.js"></script>
 <script>
+    var reviewedGlide = new Glide('#mypage-reviewed-movies', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 4,
+    })
+    reviewedGlide.mount();
+
+    var recommendedGlide = new Glide('#mypage-recommended-movies', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 4,
+    })
+    recommendedGlide.mount();
+
+    function resizeWindow() {
+        var resizeEvent = window.document.createEvent('UIEvents'); 
+        resizeEvent .initUIEvent('resize', true, false, window, 0); 
+        window.dispatchEvent(resizeEvent);
+    }
+
     $(function(){
         var ctx = document.getElementById("evaluation-chart").getContext('2d');
         var myChart = new Chart(ctx, {
