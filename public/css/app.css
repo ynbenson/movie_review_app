@@ -10707,10 +10707,6 @@ footer h1 {
   text-align: center;
 }
 
-#mypage-profile img {
-  align: center;
-}
-
 #mypage-content {
   float: right;
   width: 70%;
@@ -10719,7 +10715,9 @@ footer h1 {
 
 #mypage-icon {
   width: 65%;
-  margin: 0px 10px 10px 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #mypage-username {
