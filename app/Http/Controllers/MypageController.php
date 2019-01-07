@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
-// use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class MypageController extends BaseController
 {
     public function index()
     {
-        // TODO Add auth check
-        $user = User::find(1);
+        $user = Auth::user();
         return view('mypage', compact('user'));
     }
 
@@ -36,7 +35,7 @@ class MypageController extends BaseController
         if ($request->file('file')->isValid([])) {
             $filename = $request->file->store('public/avatar');
 
-            $user = User::find(1);
+            $user = Auth::user();
             $user->avatar_image = basename($filename);
             $user->save();
 
