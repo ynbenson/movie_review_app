@@ -56,6 +56,6 @@ class ReviewMoviesController extends Controller
             return redirect()->route('home')->with('alert', 'You have reviewed all movies in database!');
         }
             
-        return view('reviewMovie', ['movie' => $movie]);   
+        return view('reviewMovie', ['movie' => $movie->first()]);   
     }
 }

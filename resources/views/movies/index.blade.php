@@ -1,6 +1,6 @@
 @extends('layouts/app')
 @section('contents')
-
+    <h1>Movie List</h1>
     <ul>
     @foreach ($movies as $movie)
         <li>
