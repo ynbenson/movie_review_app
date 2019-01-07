@@ -18,7 +18,7 @@
         }
 
         .content-area{
-            width: 100%;
+            width: 45%;
             float: right;
             border: 1px solid #000000;
         }
@@ -137,16 +137,24 @@
                 <div class="movie-content">
                     {!! Html::image('img/movie'.$movie->movie_id.'/4.jpg', 'movie_img4', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
-            </div>
-
-            <h3>test</h3>
-            
-            
+            </div> 
         </main>
     </body>
 @endsection
 
 
 @section('footer')
-<h1>hohoho</h1>
+
+    <form method="post" action="/reviewMovies/postReview">
+        {{ csrf_field() }}
+
+        <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+                <button type="submit" class="btn btn-primary">Write Review</button>
+            </div>
+        </div>
+    </form>
+
+
 @endsection
+

@@ -13,10 +13,6 @@ class ReviewMoviesController extends Controller
         return $this->getMovie();   
     }
     
-    public function reviewPage(){
-        return 1234;
-    }
-    
     public function rateMovie(Request $request){
         if ($request->btn === "exc"){
             $review_score = 2;
@@ -40,6 +36,10 @@ class ReviewMoviesController extends Controller
         return $this->getMovie();
     }
     
+    public function postReview(){
+        return "posting review";
+    }
+    
     public function getMovie(){
         $user_id = Auth::user()->id;
         $reviewed_movies = DB::table('review_histories')
@@ -58,4 +58,6 @@ class ReviewMoviesController extends Controller
             
         return view('reviewMovie', ['movie' => $movie->first()]);   
     }
+    
+   
 }
