@@ -17,7 +17,11 @@
         margin: 20px 10px 10px 10px;
     }
 
-    #ranking-content h2{
+    #ranking-content h2 {
+        color: #FFFAFA;
+    }
+
+    #ranking-content h3 {
         color: #FFFAFA;
     }
 
