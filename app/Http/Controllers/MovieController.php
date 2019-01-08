@@ -33,7 +33,14 @@ class MovieController extends Controller
             ->get()
             ->first();       
         
-        return view('movies.show')->with('movie',$movie);
+        $reviews = DB::table('movie_reviews')
+                ->join('users', 'users.id', '=', 'movie_reviews.user_id')
+                ->select('username', 'review_content', 'movie_reviews.updated_at')
+                ->get();
+        
+        return view('movies.show')
+                ->with('movie',$movie)
+                ->with('reviews',$reviews);
     }
 
     /**

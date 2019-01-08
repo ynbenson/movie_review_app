@@ -166,6 +166,15 @@
             </div>
         </form>
     @else
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form method="post" action="/reviewMovies/postReview">
             {{ csrf_field() }} 
             <input type="hidden" name="movie_id" value="{{ $movie->movie_id }}">
@@ -175,7 +184,13 @@
             </div>
         </form>
     @endif
+    
+    @forelse ($reviews as $review)
+        <li>{{ $review->username }} : {{ $review->review_content }} {{ $review->updated_at }}</li>
+    @empty
+        <p>No reviews</p>
+    @endforelse
 
 
-@endsection
+@endsection 
 
