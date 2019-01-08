@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Movie;
 use Illuminate\Http\Request;
+use DB;
 
 class MovieController extends Controller
 {
@@ -14,8 +15,32 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all()->toArray();
-        dd($movies);
+        $movies = Movie::all();
+        //dd($movies);
+        return view('movies.index')->with('movies',$movies);
+    }
+    
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {   
+        $movie = DB::table('movies')
+            ->where('movie_id', $id)
+            ->get()
+            ->first();       
+        
+        $reviews = DB::table('movie_reviews')
+                ->join('users', 'users.id', '=', 'movie_reviews.user_id')
+                ->select('username', 'review_content', 'movie_reviews.updated_at')
+                ->get();
+        
+        return view('movies.show')
+                ->with('movie',$movie)
+                ->with('reviews',$reviews);
     }
 
     /**
@@ -35,17 +60,6 @@ class MovieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
     {
         //
     }

@@ -1,4 +1,5 @@
-@extends('layouts.app')
+
+@extends('layouts/app')
 
 @section('navi')
 @endsection
@@ -111,11 +112,23 @@
             display: inline-block;
             margin: 5px 30px 5px 30px;
         }
+        
+        .textlines {
+            border: 2px solid #E76816;  /* 枠線 */
+            border-radius: 0.67em;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: snow;  /* 背景色 */
+            width: 40em;             /* 横幅 */
+            height: 80px;           /* 高さ */
+            font-size: 1em;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+        }
     </style>
     <body>
         <h3>{{ $movie->title }}</h3>
         <p>Released at {{ $movie->released_at }}</p>
-        <main>        
+        <main>      
+            
             <div class="localNavigation">
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $movie->youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -135,41 +148,49 @@
                 <div class="movie-content">
                     {!! Html::image('img/movie'.$movie->movie_id.'/4.jpg', 'movie_img4', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
-            </div>
+            </div> 
         </main>
     </body>
 @endsection
 
-{{-- buttons for reviewing --}}
+
 @section('footer')
+    @if(!Auth::check())
+        <form method="post" action="/reviewMovies/postReview">
+            {{ csrf_field() }}
 
-{!! Form::open(['route' => 'ReviewMovies.rateMovies']) !!}
-<input type="hidden" name="_token" value="{{ csrf_token() }}">
-<input type="hidden" name="movie_id" value="{{ $movie->movie_id }}">
-<div id="outer">
-    <div class="inner">
-        <button type='submit' class='square_btn btn_exc' name='btn' value='exc'>Excellent</button>
-    </div>
-    <div class="inner">
-        <button type='submit' class='square_btn btn_great' name='btn' value='great'>Great</button>
-    </div>
-    <div class="inner">
-        <button type='submit' class='square_btn btn_ok' name='btn' value='ok'>OK</button>
-    </div>
-    <div class="inner">
-        <button type='submit' class='square_btn btn_poor' name='btn' value='poor'>Poor</button>
-    </div>
-    <div class="inner">
-        <button type='submit' class='square_btn btn_awful' name='btn' value='awful'>Awful</button>
-    </div>
-</div>
-{!! Form::close() !!}
+            <div class="form-group row">
+                <div class="offset-sm-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">Write Review</button>
+                </div>
+            </div>
+        </form>
+    @else
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form method="post" action="/reviewMovies/postReview">
+            {{ csrf_field() }} 
+            <input type="hidden" name="movie_id" value="{{ $movie->movie_id }}">
+            <p><textarea class="textlines" name="reviewText" placeholder="Your Review"></textarea></p>  
+            <div class="offset-sm-3 col-sm-9">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    @endif
+    
+    @forelse ($reviews as $review)
+        <li>{{ $review->username }} : {{ $review->review_content }} {{ $review->updated_at }}</li>
+    @empty
+        <p>No reviews</p>
+    @endforelse
 
-{{--
-<div id="outer">
-  <div class="inner"><button type="submit" class="square_btn">Interested in watching it!</button></div>
-  <div class="inner"><button type="submit" class="square_btn">Later</button></div>
-  <div class="inner"><button type="submit" class="square_btn">Not interested at all</button></div>
-</div>
---}}
-@endsection
+
+@endsection 
+

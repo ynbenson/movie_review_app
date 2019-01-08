@@ -38,7 +38,8 @@
             <div class="header-r links">
                 @auth
                     <a href="{{ url('/home') }}">Home</a>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    {{-- class="dropdown-item" (logout押せないから一時的に退避) --}}
+                    <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
@@ -67,10 +68,11 @@
                 <li><a href=ranking>Ranking</a></li>
             @auth
                 <li><a href=reviewMovies>Matcher</a></li>
+                <li><a href="{{ route('movies.index') }}">Movies</a></li>
             @else
                 <li><a href="#">Content 4</a></li>
-            @endauth
                 <li><a href="#">Content 5</a></li>
+            @endauth
             </ul>
         </nav>
         @show

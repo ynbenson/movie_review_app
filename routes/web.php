@@ -13,23 +13,25 @@
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/mypage', 'MypageController@index')->name('mypage');
-    Route::get('/reviewMovies', 'ReviewMoviesController@index');
-    
+    Route::get('/reviewMovies',  'ReviewMoviesController@index');
+    Route::post('/reviewMovies/postReview','ReviewMoviesController@postReview')->name('reviewMoviesPage.postReview');
 });
 
 Auth::routes();
 Route::get('/reviewMovies', 'ReviewMoviesController@index')->name('reviewMoviesPage');
+Route::post('reviewMovies', 'ReviewMoviesController@rateMovie')->name('ReviewMovies.rateMovies');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/','HomeController@index');
 Route::get('/mypage', 'MypageController@index')->name('mypage');
 Route::post('/upload_image', 'MypageController@upload_image');
 Route::view('/search','movie_search');
-Route::get('/movies', 'MovieController@index');
+Route::get('/movies', 'MovieController@index')->name('movies.index');
+Route::get('/movies/{id}', 'MovieController@show')->name('movies.show');
 Route::view('/ranking','ranking');
 Route::get('/redirect', 'SocialAuthTwitterController@redirect');
 Route::get('/callback', 'SocialAuthTwitterController@callback');
-Route::post('reviewMovies', 'ReviewMoviesController@rateMovie')->name('ReviewMovies.rateMovies');
+
 Route::get('about', function(){
 //    $languages=[
 //        'languages' => [
