@@ -169,20 +169,6 @@
     recommendedGlide.mount();
 </script>
 
-<div id="r-sidebar">
-    <div class="r-sidebar-content">
-        <h3 class="home">Latest Movies</h3>
-    </div>
-    <div class="r-sidebar-content">
-        <h3 class="home">Recommended Movies</h3>
-    </div>
-    <div class="r-sidebar-content">
-        <h3 class="home">Categories</h3>
-    </div>
-</div>
-
-
-
 @if (Auth::check())
     @if ($reviewed === 0)
         <script>
