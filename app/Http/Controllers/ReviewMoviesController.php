@@ -36,8 +36,9 @@ class ReviewMoviesController extends Controller
         return $this->getMovie();
     }
     
-    public function postReview(){
-        return "posting review";
+    public function postReview(Request $comment){
+        return Auth::user()->username." has commented ".$comment->reviewText;
+        ///return "posting review";
     }
     
     public function getMovie(){

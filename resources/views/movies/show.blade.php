@@ -112,6 +112,17 @@
             display: inline-block;
             margin: 5px 30px 5px 30px;
         }
+        
+        .textlines {
+            border: 2px solid #E76816;  /* 枠線 */
+            border-radius: 0.67em;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: snow;  /* 背景色 */
+            width: 40em;             /* 横幅 */
+            height: 80px;           /* 高さ */
+            font-size: 1em;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+        }
     </style>
     <body>
         <h3>{{ $movie->title }}</h3>
@@ -144,16 +155,26 @@
 
 
 @section('footer')
+    @if(!Auth::check())
+        <form method="post" action="/reviewMovies/postReview">
+            {{ csrf_field() }}
 
-    <form method="post" action="/reviewMovies/postReview">
-        {{ csrf_field() }}
-
-        <div class="form-group row">
-            <div class="offset-sm-3 col-sm-9">
-                <button type="submit" class="btn btn-primary">Write Review</button>
+            <div class="form-group row">
+                <div class="offset-sm-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">Write Review</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    @else
+        <form method="post" action="/reviewMovies/postReview">
+            {{ csrf_field() }} 
+            <input type="hidden" name="movie_id" value="{{ $movie->movie_id }}">
+            <p><textarea class="textlines" name="reviewText" placeholder="Your Review"></textarea></p>  
+            <div class="offset-sm-3 col-sm-9">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    @endif
 
 
 @endsection

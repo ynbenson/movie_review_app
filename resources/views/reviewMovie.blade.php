@@ -115,8 +115,7 @@
     <body>
         <h3>{{ $movie->title }}</h3>
         <p>Released at {{ $movie->released_at }}</p>
-        <main>      
-            
+        <main>        
             <div class="localNavigation">
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $movie->youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -137,7 +136,6 @@
                     {!! Html::image('img/movie'.$movie->movie_id.'/4.jpg', 'movie_img4', array( 'width' => 220, 'height' => 200 )) !!}
                 </div>
             </div>
-
         </main>
     </body>
 @endsection
