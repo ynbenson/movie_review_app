@@ -13,7 +13,30 @@
     #ranking-content {
         float: right;
         width: 71%;
+        border: 1px solid #FFF;
         margin: 20px 10px 10px 10px;
+    }
+
+    #ranking-content h2{
+        color: #FFFAFA;
+    }
+
+    #mypage-reviewed-movies {
+        padding-bottom: 15px;
+    }
+    .tab_item {
+        display: inline-block;
+        text-decoration :none;
+        background: #87b9eb;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.4), 0 -4px 5px -2px #6d95ce inset;
+        border-radius: 2px;
+        transition: .3s;
+    }
+
+    .tab_item:hover{
+        box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        background-color: #ADFF2F;
+        transition: 0.5s;
     }
 
     .movie-search-result-description {
@@ -30,7 +53,6 @@
     .most-reviewed-user-ranking {
         width: 100%;
         margin: 5px 10px 5px 10px;
-        border-bottom: 3px solid #000000;
     }
 
     .most-reviewed-user-ranking img {
@@ -45,7 +67,7 @@
     .popular-user-ranking {
         width: 100%;
         margin: 5px 10px 5px 10px;
-        border-bottom: 3px solid #000000;
+        padding-bottom: 10px;
     }
 
     .popular-user-ranking img {
@@ -59,7 +81,6 @@
 
     .ranking-tabs {
         padding-bottom: 40px;
-        background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         width: 100%;
         margin: 0 0 0 0;
@@ -68,12 +89,11 @@
     .tab_item {
         width: calc(100%/3);
         height: 50px;
-        border-bottom: 3px solid #000000;
-        background-color: #d9d9d9;
+        background-color: #141414;
         line-height: 50px;
         font-size: 16px;
         text-align: center;
-        color: #565656;
+        color: #FFF;
         display: block;
         float: left;
         text-align: center;
@@ -195,7 +215,7 @@
                     <h2>Recommended Movies</h2>
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides">
-                            @for ($i = 5; $i >= 0; $i--)
+                            @for ($i = 5; $i > 0; $i--)
                             <?php $image = "img/movie$i.png"; ?>
                                 <li class="glide__slide">
                                     <img src="{{$image}}" width="200px" height="120px"/>
