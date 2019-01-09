@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AgreeTableSeeder' => $baseDir . '/database/seeds/AgreeTableSeeder.php',
+    'App\\Agree' => $baseDir . '/app/Agree.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -15,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\MainController' => $baseDir . '/app/Http/Controllers/MainController.php',
     'App\\Http\\Controllers\\MovieController' => $baseDir . '/app/Http/Controllers/MovieController.php',
     'App\\Http\\Controllers\\MovieSearchController' => $baseDir . '/app/Http/Controllers/MovieSearchController.php',
     'App\\Http\\Controllers\\MypageController' => $baseDir . '/app/Http/Controllers/MypageController.php',

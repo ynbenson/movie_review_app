@@ -462,6 +462,8 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
     );
 
     public static $classMap = array (
+        'AgreeTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AgreeTableSeeder.php',
+        'App\\Agree' => __DIR__ . '/../..' . '/app/Agree.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -471,6 +473,7 @@ class ComposerStaticInit1cfb204ac38c3e99f8024da9654bfed1
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
         'App\\Http\\Controllers\\MovieController' => __DIR__ . '/../..' . '/app/Http/Controllers/MovieController.php',
         'App\\Http\\Controllers\\MovieSearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/MovieSearchController.php',
         'App\\Http\\Controllers\\MypageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MypageController.php',

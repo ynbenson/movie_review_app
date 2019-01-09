@@ -123,6 +123,26 @@
             font-size: 1em;          /* 文字サイズ */
             line-height: 1.2;        /* 行の高さ */
         }
+        
+        
+        .agree_active{
+            border: 1px solid #ccffcc;
+            background: #ccffcc;
+            text-decoration: none;
+        }
+        
+        .disagree_active{
+            border: 1px solid #ff6666;
+            background: #ff6666;
+        }
+
+        .agreeBtn, .disagreeBtn{  
+            border-radius: 4px;
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+        
     </style>
     <body>
         <h3>{{ $movie->title }}</h3>
@@ -186,11 +206,119 @@
     @endif
     
     @forelse ($reviews as $review)
+
         <li>{{ $review->username }} : {{ $review->review_content }} {{ $review->updated_at }}</li>
+        <input type="hidden" name="movie_id" value="{{ $movie->movie_id }}">
+        @if ($viewer_id != -1)
+        <div class="offset-sm-3 col-sm-9">
+            {{-- id => id of user who posted the review --}}
+            <input type="button" value="AGREE ⤴" class="agreeBtn" id="{{ $review->user_id }}"> 
+            <input type="button" value="DISAGREE ⤵" class="disagreeBtn" id="{{ $review->user_id }}">
+        </div>
+        @endif
+
     @empty
         <p>No reviews</p>
     @endforelse
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+	$(".agreeBtn").click(function() {
+            $(this).toggleClass('agree_active');
+            
+            var json1 = {
+                "reviewer_id": Number($(this).attr("id")),
+                "movie_id": {{ $movie->movie_id }},
+            };
+
+            $.ajaxSetup({
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+            });
+        
+            $.ajax({	
+                    url:"/movies/agree",
+                    type:"post",
+                    contentType: "application/json",
+                    data:JSON.stringify(json1),
+                    dataType:"json",
+                    }).done(function(data1,textStatus,jqXHR) {
+                    }); 
+        });
+
+    
+    
+    $(".disagreeBtn").click(function() {
+        $(this).toggleClass('disagree_active');
+
+        var json1 = {
+            "reviewer_id": Number($(this).attr("id")),
+            "movie_id": {{ $movie->movie_id }},
+        };
+
+        $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+        });
+
+        $.ajax({	
+                url:"/movies/disagree",
+                type:"post",
+                contentType: "application/json",
+                data:JSON.stringify(json1),
+                dataType:"json",
+                }).done(function(data1,textStatus,jqXHR) {
+                }); 
+    });
+//    $(function() {
+//	$(".disagreeBtn").click(function() {
+//            $(this).toggleClass('disagree_active');
+//            
+//            var json1 = {
+//                "reviewer_id": Number($(this).attr("id")),
+//                "movie_id": {{ $movie->movie_id }},
+//            };
+//
+//            $.ajaxSetup({
+//                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+//            });
+//        
+//            $.ajax({	
+//                    url:"/movies/disagree",
+//                    type:"post",
+//                    contentType: "application/json",
+//                    data:JSON.stringify(json1),
+//                    dataType:"json",
+//                    }).done(function(data1,textStatus,jqXHR) {
+//                    }); 
+//    });
+
+
+//function change_agree()
+//{
+//    var elem = document.getElementById("agreeBtn");
+//    if (elem.value==="AGREE ⤴"){
+//        elem.value = "AGREED";
+//        document.getElementById("disagreeBtn").disabled = true;
+//    }
+//    else {
+//        elem.value = "AGREE ⤴";
+//        document.getElementById("disagreeBtn").disabled = false;
+//    }
+//}
+//
+//function change_disagree() 
+//{
+//    var elem = document.getElementById("disagreeBtn");
+//    if (elem.value==="DISAGREE ⤵") {
+//        elem.value = "DISAGREED";
+//        document.getElementById("agreeBtn").disabled = true;
+//    }
+//    else {
+//        elem.value = "DISAGREE ⤵";
+//        document.getElementById("agreeBtn").disabled = false;
+//    }
+//}
+</script>
 
 @endsection 
 
