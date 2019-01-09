@@ -13,12 +13,14 @@ class ReviewAgreeTable extends Migration
      */
     public function up()
     {
-        Schema::create('review_agree', function(Blueprint $table){
+        Schema::create('review_agrees', function(Blueprint $table){
+            $table->increments('id'); // agree id 
             $table->integer('evaluator_id');
             $table->integer('evaluatee_id');
             $table->integer('movie_id');
-            $table->smallInteger('evaluation'); // agree=> 1, disagree=> -1
-            $table->timestamps();    
+            $table->boolean('agree');
+            $table->boolean('disagree');
+            $table->timestamps();
         });
     }
 
