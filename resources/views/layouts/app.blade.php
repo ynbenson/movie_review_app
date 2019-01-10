@@ -33,7 +33,9 @@
     <div id="wrapper">
         <header>
             <div class="header-logo">
-                <a href="{{ route('home') }}"><img src="img/header-logo.png"/></a>
+                <a href="{{ route('home') }}">
+                    <img src="{{ URL::to('/') }}/img/header-logo.png" alt="header-logo.png" />
+                </a>  
             </div>
             <div class="header-r links">
                 @auth
