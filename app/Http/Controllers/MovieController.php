@@ -80,6 +80,7 @@ class MovieController extends Controller
         $reviews = DB::table('movie_reviews')
                 ->join('users', 'users.id', '=', 'movie_reviews.user_id')
                 ->select('movie_reviews.user_id','username', 'review_content', 'movie_reviews.updated_at')
+                ->where('movie_reviews.movie_id', $id)
                 ->get();
         
         $user_id = -1;
