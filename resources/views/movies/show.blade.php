@@ -175,6 +175,8 @@
 
 
 @section('footer')
+    <h4>Movie Summary</h4>
+    <p>{{ $summary }}</p>
     @if(!Auth::check())
         <form method="post" action="/reviewMovies/postReview">
             {{ csrf_field() }}
