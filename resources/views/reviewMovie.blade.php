@@ -3,7 +3,7 @@
 @section('navi')
 @endsection
 
-@section('contents')
+@section('content')
     <style>
         body{
             display: flex;

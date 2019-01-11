@@ -58,7 +58,7 @@
                 @endauth
             </div>
         </header>
-        @section('contents')
+        @section('content')
             base
         @show
         @section('navi')

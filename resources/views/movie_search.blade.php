@@ -1,5 +1,5 @@
 @extends('layouts/app')
-@section('contents')
+@section('content')
 <style>
     #search-result {
         float: left;
