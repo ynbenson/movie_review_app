@@ -162,7 +162,12 @@
     <div class="inner">
         <button type='submit' class='square_btn btn_awful' name='btn' value='awful'>Awful</button>
     </div>
+    <div class="inner">
+        <!-- FIXME : btn_skipのcssを用意する -->
+        <button type='submit' class='btn_skip' name='btn' value='skip'>SKIP</button>
+    </div>
 </div>
+
 {!! Form::close() !!}
 
 {{--

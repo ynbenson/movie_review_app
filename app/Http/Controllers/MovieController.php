@@ -64,12 +64,6 @@ class MovieController extends Controller
         }
     }
     
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {   
         $movie = DB::table('movies')
@@ -83,14 +77,48 @@ class MovieController extends Controller
                 ->where('movie_reviews.movie_id', $id)
                 ->get();
         
+        $summary = $this->get_summary(urlencode($movie->title));
+
         $user_id = -1;
         if (Auth::check()){ $user_id = Auth::user()->id; }
         
         return view('movies.show')
                 ->with('movie',$movie)
                 ->with('reviews',$reviews)
-                ->with('viewer_id', $user_id);
+                ->with('viewer_id',$user_id)
+                ->with('summary',$summary);
+    }
+    
+    public function get_summary($title){
+        $curl = curl_init();
+        $title = urlencode($title);
+        $TMDB_API_KEY = env("TMDB_KEY", "default_value");
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => "https://api.themoviedb.org/3/search/movie?page=1&language=en-US&api_key=".$TMDB_API_KEY."&query=".$title,
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "GET",
+          CURLOPT_POSTFIELDS => "{}",
+        ));
 
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+        
+        $ret = "";
+        if ($err) {
+            $ret = "ERROR_USING_MTDB";
+            echo "cURL Error #:" . $err;
+        } else {
+            $jset = json_decode($response, true);
+            $ret = $jset['results'][0]['overview'];
+        }
+        
+        return $ret;
     }
 
     /**
