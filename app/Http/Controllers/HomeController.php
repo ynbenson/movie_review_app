@@ -12,15 +12,60 @@ class HomeController extends BaseController
 {
     public function index()
     {
-        $reviewed = 0;
+        $reviewed = 0; /* $reviewed == 0 if user never used review feature, otherwise 1*/
         if (Auth::check()){ 
             $user_id = Auth::user()->id;
             if (DB::table('review_histories')->where('user_id','=',$user_id)->count() != 0){
                 $reviewed = 1;
             }
         }
+        
+        $curl = curl_init();
+        $title = urlencode("109445");
+        curl_setopt_array($curl, array(
+          //CURLOPT_URL => "https://api.themoviedb.org/3/movie/%7B".$title."    %7D/images?language=en-US&api_key=7961e2f0de5b64940c087e1ee64d3840",
+          CURLOPT_URL => "https://api.themoviedb.org/3/movie/popular?page=1&language=en-US&api_key=7961e2f0de5b64940c087e1ee64d3840",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "GET",
+          CURLOPT_POSTFIELDS => "{}",
+        ));
 
-        return view('home', ['reviewed' => $reviewed]);
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $jset = json_decode($response, true);
+            $movies = $jset['results'];
+            $ret = [];
+            foreach($movies as $movie){
+                $arr = array(
+                    "title"         => $movie["title"],
+                    "overview"      => $movie["overview"],
+                    "poster_path"   => "https://image.tmdb.org/t/p/w500".$movie["poster_path"],
+                    "released_at"   => $movie["release_date"],
+                    "vote_avg"      => $movie["vote_average"],
+                );
+                $ret[] = $arr;
+            }
+            unset($movie); 
+        }
+        //dd($ret);
+        return view('home', ['reviewed' => $reviewed, 'movies' => $ret]);
+    }
+    
+    
+    
+    
+    public function get_latest_movies(){
+        
     }
 
     public function showLogin()
