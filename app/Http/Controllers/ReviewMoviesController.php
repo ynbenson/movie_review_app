@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Movie;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +12,7 @@ class ReviewMoviesController extends Controller
         return $this->getMovie();   
     }
     
-    public function rateMovie(Request $request){
+    public function rateMovie(Request $request){ 
         if ($request->btn === "exc"){
             $review_score = 2;
         } elseif ($request->btn === "great"){
@@ -66,11 +65,13 @@ class ReviewMoviesController extends Controller
         }
         
         return redirect()->route('movies.show', $request->movie_id);
-        
-        //return Auth::user()->username." has commented ".$comment->reviewText;
-        ///return "posting review";
     }
     
+    /*
+     * Purpose : return a movie object that user haven't rated or skipped
+     * Precondition : none 
+     * Postcondition : movie object
+     */
     public function getMovie(){
         $user_id = Auth::user()->id;
         $reviewed_movies = DB::table('review_histories')
@@ -89,6 +90,4 @@ class ReviewMoviesController extends Controller
             
         return view('reviewMovie', ['movie' => $movie->first()]);   
     }
-    
-   
 }
