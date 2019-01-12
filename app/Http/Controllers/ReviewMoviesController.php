@@ -12,7 +12,7 @@ class ReviewMoviesController extends Controller
         return $this->getMovie();   
     }
     
-    public function rateMovie(Request $request){
+    public function rateMovie(Request $request){ 
         if ($request->btn === "exc"){
             $review_score = 2;
         } elseif ($request->btn === "great"){

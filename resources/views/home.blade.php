@@ -12,61 +12,9 @@
         <div id="latest-movies" class="glide">
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
-                    <li class="glide__slide">
-                        <div class="home-movie-thumbnail">
-                            <img src="img/movie1.png" width="240px"/>
-                        </div>
-                        <div class="latest-movie-description">
-                            <p class="home-movie-title">Movie Title</p>
-                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
-                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
-                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <div class="home-movie-thumbnail">
-                            <img src="img/movie2.png" width="240px"/>
-                        </div>
-                        <div class="latest-movie-description">
-                            <p class="home-movie-title">Movie Title</p>
-                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
-                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
-                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <div class="home-movie-thumbnail">
-                            <img src="img/movie3.png" width="240px"/>
-                        </div>
-                        <div class="latest-movie-description">
-                            <p class="home-movie-title">Movie Title</p>
-                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
-                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
-                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <div class="home-movie-thumbnail">
-                            <img src="img/movie4.png" width="240px"/>
-                        </div>
-                        <div class="latest-movie-description">
-                            <p class="home-movie-title">Movie Title</p>
-                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
-                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
-                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <div class="home-movie-thumbnail">
-                            <img src="img/movie5.png" width="240px"/>
-                        </div>
-                        <div class="latest-movie-description">
-                            <p class="home-movie-title">Movie Title</p>
-                            <p class="home-movie-description">movie description1<br>movie description2<br>movie description3<br>movie description4<br>movie description5<br>movie description6<br></p>
-                            <p class="home-movie-evaluation">Evaluation: ⭐⭐⭐⭐⭐</p>
-                            <p class="home-movie-date">Screening Date: January 6. 2019</p>
-                        </div>
-                    </li>
+                    @foreach($movies as $movie)
+                        @include('partials._homeMovieLayout', ['movie' => $movie])
+                    @endforeach
                 </ul>
 
                 <div class="glide__arrows" data-glide-el="controls">
