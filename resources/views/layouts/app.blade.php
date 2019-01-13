@@ -16,12 +16,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script type="text/javascript" src="js/Chart.min.js"></script>
-
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="node_modules/octicons/build/font/octicons.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -38,6 +39,7 @@
                 </a>  
             </div>
             <div class="header-r links">
+                
                 @auth
                     <a href="{{ url('/home') }}">Home</a>
                     {{-- class="dropdown-item" (logout押せないから一時的に退避) --}}
@@ -68,7 +70,7 @@
                 <li><a href=search>Search</a></li>
                 <li><a href=ranking>Ranking</a></li>
             @auth
-                <li><a href=reviewMovies>Matcher</a></li>
+                <li><a href=reviewMovies>Matcher　<img src="test.svg">) %></a></li>
                 <li><a href="{{ route('movies.index') }}">Movies</a></li>
                 <li><a href="{{ route('user.recommendUser') }}">Recommend Users</a></li>
             @else
