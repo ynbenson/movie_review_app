@@ -22,9 +22,9 @@ class HomeController extends BaseController
         
         $curl = curl_init();
         $title = urlencode("109445");
+        $TMDB_API_KEY = env("TMDB_KEY", "default_value");
         curl_setopt_array($curl, array(
-          //CURLOPT_URL => "https://api.themoviedb.org/3/movie/%7B".$title."    %7D/images?language=en-US&api_key=7961e2f0de5b64940c087e1ee64d3840",
-          CURLOPT_URL => "https://api.themoviedb.org/3/movie/popular?page=1&language=en-US&api_key=7961e2f0de5b64940c087e1ee64d3840",
+          CURLOPT_URL => "https://api.themoviedb.org/3/movie/popular?page=1&language=en-US&api_key=$TMDB_API_KEY",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
