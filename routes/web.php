@@ -14,6 +14,7 @@
 Auth::routes(['reset' => true, 'verify' => true]);
 
 Route::group(['middleware' => 'auth'], function() {
+    Route::post('/follow', 'UserController@follow');
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('/mypage', 'MypageController@index')->name('mypage');
     Route::get('/recommendUsers', 'UserController@recommend')->name('user.recommendUser');
