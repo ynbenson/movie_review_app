@@ -59,7 +59,6 @@
             </div>
         </header>
         @section('content')
-            base
         @show
         @section('navi')
         <nav>

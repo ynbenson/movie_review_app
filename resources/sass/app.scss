@@ -64,7 +64,7 @@ header .links > a {
     text-transform: uppercase;
 }
 
-nav{
+nav {
     display: block;
     width: 100%;
     margin-bottom: 5px; /**/
@@ -91,7 +91,7 @@ nav li:last-child{
 nav a{
     display: block;
     text-decoration: none;
-    color:#313131;
+    color: orange;
     font-size: 110%;
     letter-spacing: 5px;
     font-weight: 400;
@@ -99,8 +99,8 @@ nav a{
 }
 
 nav a:hover{
-    background-color: orange;
-    color: #fff;
+    background-color: greenyellow;
+    color: orange;
     transition: 0.5s;
 }
 
@@ -163,6 +163,45 @@ nav a:hover{
 .latest-movies-box p {
     margin: 0; 
     padding: 0;
+}
+
+.recommend-user-list {
+  float: left;
+  width: 90%;
+  margin-left: 10%;
+  border-bottom: 3px solid #000000;
+}
+
+.recommend-user {
+  width: 70%;
+  margin: 5px 10px 5px 10px;
+  border-bottom: 3px solid #000000;
+}
+
+.recommend-user-name {
+  color: orange;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+}
+
+.recommend-user-description {
+  color: orange;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+}
+
+btn .btn_follow {
+  background: #f7f7f7;
+  border-left: solid 6px #009900;/*左線*/
+  color: #009900;/*文字色*/
+}
+
+btn .btn_unfollow {
+  background: #f7f7f7;
+  border-left: solid 6px #ff3333;/*左線*/
+  color: #ff3333;/*文字色*/
 }
 
 .home-movie-thumbnail {
