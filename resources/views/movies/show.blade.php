@@ -125,6 +125,7 @@
             padding: 0;
         }
         .reviewed-comment-date {
+            text-align: right;
         }
 
         hr {
