@@ -1,16 +1,6 @@
 @extends('layouts/app')
 @section('content')
-<style>
-    .popular-user img {
-        width: 20%;
-    }
 
-    .popular-user-description {
-        float: right;
-        width: 75%;
-    }
-
-</style>
 <div class="recommend-user-list">
     @foreach ($recommend_users as $recommend_user)
         <div class="recommend-user">
@@ -37,9 +27,9 @@
                         {!! Form::open(['url' => '/follow', 'method' => 'post']) !!}
                         <input type="hidden" name="followee_user_id" value="{{$recommend_user["id"]}}">
                         @if ($recommend_user["is_followed"])
-                            <td>{!! Form::submit('UnFollow', ['class' => 'btn btn-default']) !!}</td>
+                            <td><button type='submit' class='btn_follow'>Follow</button></td>
                         @else
-                            <td>{!! Form::submit('Follow', ['class' => 'btn btn-default']) !!}</td>
+                            <td><button type='submit' class='btn_unfollow'>Unfollow</button></td>
                         @endif
                         {!! Form::close() !!}
                     </tr>
