@@ -11,7 +11,10 @@
 |
 */
 
+Auth::routes(['reset' => true, 'verify' => true]);
+
 Route::group(['middleware' => 'auth'], function() {
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('/mypage', 'MypageController@index')->name('mypage');
     Route::get('/reviewMovies',  'ReviewMoviesController@index');
     Route::post('/reviewMovies/postReview','ReviewMoviesController@postReview')->name('reviewMoviesPage.postReview');
@@ -19,19 +22,16 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/movies/disagree', 'MovieController@disagree');
 });
 
-Auth::routes();
+
 
 Route::get('/test1',function () {
     return view('index');
 });
 Route::post('/test1','MainController@write1');
 
-
-
 Route::get('/reviewMovies', 'ReviewMoviesController@index')->name('reviewMoviesPage');
 Route::post('reviewMovies', 'ReviewMoviesController@rateMovie')->name('ReviewMovies.rateMovies');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/','HomeController@index');
 Route::post('/upload_image', 'MypageController@upload_image');
 Route::view('/search','movie_search');

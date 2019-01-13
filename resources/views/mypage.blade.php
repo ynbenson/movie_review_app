@@ -1,5 +1,5 @@
 @extends('layouts/app')
-@section('contents')
+@section('content')
 <style>
     #mypage-chart-wrapper {
         width: 100%;

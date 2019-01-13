@@ -5,7 +5,7 @@
     </div>
 @endif
 
-@section('contents')
+@section('content')
 <div class="latest-movies-box">
     <div class="home-content">
         <h2 class="home">　Latest Movies</h2>
