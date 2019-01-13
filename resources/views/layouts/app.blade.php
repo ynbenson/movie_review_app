@@ -71,6 +71,7 @@
             @auth
                 <li><a href=reviewMovies>Matcher</a></li>
                 <li><a href="{{ route('movies.index') }}">Movies</a></li>
+                <li><a href="{{ route('user.recommendUser') }}">Recommend Users</a></li>
             @else
                 <li><a href="#">Content 4</a></li>
                 <li><a href="#">Content 5</a></li>

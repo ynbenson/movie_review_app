@@ -16,6 +16,7 @@ Auth::routes(['reset' => true, 'verify' => true]);
 Route::group(['middleware' => 'auth'], function() {
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('/mypage', 'MypageController@index')->name('mypage');
+    Route::get('/recommendUsers', 'UserController@recommend')->name('user.recommendUser');
     Route::get('/reviewMovies',  'ReviewMoviesController@index');
     Route::post('/reviewMovies/postReview','ReviewMoviesController@postReview')->name('reviewMoviesPage.postReview');
     Route::post('/movies/agree', 'MovieController@agree');
