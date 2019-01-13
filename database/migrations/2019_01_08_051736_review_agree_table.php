@@ -31,6 +31,6 @@ class ReviewAgreeTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('review_agrees');
     }
 }
