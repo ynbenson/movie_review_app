@@ -14,6 +14,11 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function tst(){
+        return view('movies.test');
+    }
+    
+    
     public function index()
     {
         $movies = Movie::all();
@@ -91,7 +96,6 @@ class MovieController extends Controller
     
     public function get_summary($title){
         $curl = curl_init();
-        $title = urlencode($title);
         $TMDB_API_KEY = env("TMDB_KEY", "default_value");
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.themoviedb.org/3/search/movie?page=1&language=en-US&api_key=".$TMDB_API_KEY."&query=".$title,
@@ -108,7 +112,7 @@ class MovieController extends Controller
         $err = curl_error($curl);
 
         curl_close($curl);
-        
+        //dd($response);
         $ret = "";
         if ($err) {
             $ret = "ERROR_USING_MTDB";
@@ -117,7 +121,6 @@ class MovieController extends Controller
             $jset = json_decode($response, true);
             $ret = $jset['results'][0]['overview'];
         }
-        
         return $ret;
     }
 

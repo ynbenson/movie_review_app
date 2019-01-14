@@ -70,7 +70,7 @@
                 <li><a href=search>Search</a></li>
                 <li><a href=ranking>Ranking</a></li>
             @auth
-                <li><a href=reviewMovies>Matcher　<img src="test.svg">) %></a></li>
+                <li><a href=reviewMovies>Matcher</a></li>
                 <li><a href="{{ route('movies.index') }}">Movies</a></li>
                 <li><a href="{{ route('user.recommendUser') }}">Recommend Users</a></li>
             @else

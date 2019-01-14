@@ -1,0 +1,10 @@
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+  height: 100px;
+}
+
+.octicon-bell {
+    color:red;
+}
