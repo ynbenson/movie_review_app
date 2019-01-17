@@ -24,13 +24,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/movies/disagree', 'MovieController@disagree');
 });
 
-
-
-Route::get('/test1',function () {
-    return view('index');
-});
-Route::post('/test1','MainController@write1');
-
+Route::get('/test1','MainController@write1');
+Route::post('/test1', 'MainController@show')->name('youtubeMovies');
 Route::get('/reviewMovies', 'ReviewMoviesController@index')->name('reviewMoviesPage');
 Route::post('reviewMovies', 'ReviewMoviesController@rateMovie')->name('ReviewMovies.rateMovies');
 Route::get('/home', 'HomeController@index')->name('home');
