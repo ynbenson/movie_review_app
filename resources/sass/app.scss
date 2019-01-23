@@ -30,27 +30,25 @@ html, body {
 
 header {
     // margin-top: 18px;
-    background-color: #000000;
-    height: 80px;
+    background-color: #666666;
+    height: 50px;
 }
 
 .header-logo {
     float: left;
-    margin: auto;
-    width: 30%;
-    height: 80px;
+    margin-left: 3%;
+    width: 15%;
+    height: 40px;
 }
 
 .header-logo img {
-    float: left;
-    width: 80%;
 }
 
 .header-r {
     float: right;
     text-align: right;
-    line-height: 80px;
-    height: 80px;
+    line-height: 50px;
+    height: 50px;
     width: 65%;
 }
 
@@ -62,46 +60,6 @@ header .links > a {
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
-}
-
-nav {
-    display: block;
-    width: 100%;
-    margin-bottom: 5px; /**/
-    overflow: hidden;   /*おまじない*/
-}
-
-nav ul{
-    list-style: none;
-    width: 80%;
-    margin-left: 5%;
-}
-
-nav li{
-    width: calc(20% - 2px);
-    border-left: 1px solid orange;
-    text-align: center;
-    float: left;
-}
-
-nav li:last-child{
-    border-right: 1px solid orange;
-}
-
-nav a{
-    display: block;
-    text-decoration: none;
-    color: orange;
-    font-size: 110%;
-    letter-spacing: 5px;
-    font-weight: 400;
-    line-height: 40px;
-}
-
-nav a:hover{
-    background-color: greenyellow;
-    color: orange;
-    transition: 0.5s;
 }
 
 #r-sidebar {
