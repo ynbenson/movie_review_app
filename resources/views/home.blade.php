@@ -8,7 +8,7 @@
 @section('content')
 <div class="latest-movies-box">
     <div class="home-content">
-        <h2 class="home">　Latest Movies</h2>
+        <h2 class="latest-movies">Latest Movies</h2>
         <div id="latest-movies" class="glide">
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">

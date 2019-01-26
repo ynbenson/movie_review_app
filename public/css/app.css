@@ -10570,11 +10570,29 @@ header .links > a {
 
 .latest-movies-box {
   float: left;
-  padding: 0.5em 1em;
+  padding: 0em 1em;
   background: linear-gradient(to right, #ffb03c, #ff708d);
   color: #FFF;
   width: 100%;
-  height: 560px;
+  height: 450px;
+}
+
+.latest-movies-box:after,
+.latest-movies-box:before {
+  position: absolute;
+  width: 15%;
+  height: 450px;
+  content: "";
+  opacity: 0.5;
+  background: #000;
+}
+
+.latest-movies-box:before {
+  right: 0%;
+}
+
+.latest-movies-box:after {
+  left: 0%;
 }
 
 .latest-movies-box p {
@@ -10641,14 +10659,13 @@ btn .btn_unfollow {
 
 .home-movie-thumbnail {
   float: left;
-  width: 40%;
   margin: 0 0 0 15%;
 }
 
 .latest-movie-description {
   float: right;
   width: 30%;
-  margin: 0 10% 0 0;
+  margin: 0 25% 0 0;
 }
 
 p.home-movie-title {
@@ -10729,6 +10746,10 @@ footer h1 {
   font-style: italic;
   text-align: left;
   width: 100%;
+}
+
+h2.latest-movies {
+  margin-left: 15%;
 }
 
 h3.home {

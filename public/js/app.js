@@ -48133,10 +48133,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Panda\Documents\php\movie_review_app\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\Panda\Documents\php\movie_review_app\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\Panda\Documents\php\movie_review_app\node_modules\@glidejs\glide\src\assets\sass\glide.core.scss */"./node_modules/@glidejs/glide/src/assets/sass/glide.core.scss");
-module.exports = __webpack_require__(/*! C:\Users\Panda\Documents\php\movie_review_app\node_modules\@glidejs\glide\src\assets\sass\glide.theme.scss */"./node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss");
+__webpack_require__(/*! /Users/himakuro/Documents/php/movie_review_app/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/himakuro/Documents/php/movie_review_app/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/himakuro/Documents/php/movie_review_app/node_modules/@glidejs/glide/src/assets/sass/glide.core.scss */"./node_modules/@glidejs/glide/src/assets/sass/glide.core.scss");
+module.exports = __webpack_require__(/*! /Users/himakuro/Documents/php/movie_review_app/node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss */"./node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss");
 
 
 /***/ })
