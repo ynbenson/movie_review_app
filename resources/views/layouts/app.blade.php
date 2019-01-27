@@ -125,11 +125,10 @@
         }
 
         nav {
-            width: 250px;
+            width: 205px;
             height: 100%;
             padding-top: 20px;
             background-color: #1b1e21;
-            /*background-color: rgba(16, 69, 153, 0.8);*/
             position: fixed;
             left: 0;
             z-index: 10;
@@ -139,11 +138,31 @@
         nav.open {
             transform: translateZ(0);
         }
-        nav li {
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
+
+        ul {
+            padding-inline-start: 0px;
         }
+
+        nav li {
+            list-style: none;
+            font-weight: 600;
+            text-align: left;
+            padding: 10px 0 15px 25px;
+            border-bottom: 1px solid #292929;
+        }
+
+        nav li a {
+            color: white;
+        }
+
+        /*nav li a {*/
+            /*color: white;*/
+        /*}*/
+
+        nav li a:hover {
+            color: gray;
+        }
+
     </style>
 </head>
 <body>
@@ -154,13 +173,6 @@
                 <span></span>
                 <span></span>
             </div>
-            {{--<nav>--}}
-                {{--<ul>--}}
-                    {{--<li>MENU</li>--}}
-                    {{--<li>MENU</li>--}}
-                    {{--<li>MENU</li>--}}
-                {{--</ul>--}}
-            {{--</nav>--}}
             <div class="overlay"></div>
             <div class="header-logo">
                 <a href="{{ route('home') }}">
@@ -194,14 +206,14 @@
         <nav>
             <ul>
                 
-                <li><a href="mypage">Mypage</a></li>
-                <li><a href=search>Search</a></li>
-                <li><a href=ranking>Ranking</a></li>
+                <li><a href="mypage">■ Mypage</a></li>
+                <li><a href=search>■ Search</a></li>
+                <li><a href=ranking>■ Ranking</a></li>
             @auth
-                <li><a href=reviewMovies>Matcher</a></li>
-                <li><a href="{{ route('movies.index') }}">Movies</a></li>
-                <li><a href="{{ route('user.recommendUser') }}">Recommend Users</a></li>
-                <li><a href="{{ route('rateMoviesPage') }}">Rate Movies</a></li>
+                <li><a href=reviewMovies>■ Matcher</a></li>
+                <li><a href="{{ route('movies.index') }}">■ Movies</a></li>
+                <li><a href="{{ route('user.recommendUser') }}">■ Recommend Users</a></li>
+                <li><a href="{{ route('rateMoviesPage') }}">■ Rate Movies</a></li>
             @else
                 <li><a href="#">Content 4</a></li>
                 <li><a href="#">Content 5</a></li>

@@ -10491,13 +10491,13 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #666666;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 html,
 body {
-  background-color: #141414;
+  background-color: white;
   color: #636b6f;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
@@ -10570,11 +10570,32 @@ header .links > a {
 
 .latest-movies-box {
   float: left;
-  padding: 0.5em 1em;
+  padding: 0em 1em;
   background: linear-gradient(to right, #ffb03c, #ff708d);
   color: #FFF;
   width: 100%;
-  height: 560px;
+  height: 450px;
+}
+
+.latest-movies-box:after,
+.latest-movies-box:before {
+  position: absolute;
+  height: 450px;
+  content: "";
+}
+
+.latest-movies-box:before {
+  width: 11%;
+  right: 7%;
+  opacity: 0.5;
+  background: #000;
+}
+
+.latest-movies-box:after {
+  width: 11%;
+  left: 7%;
+  opacity: 0.5;
+  background: #000;
 }
 
 .latest-movies-box p {
@@ -10641,14 +10662,13 @@ btn .btn_unfollow {
 
 .home-movie-thumbnail {
   float: left;
-  width: 40%;
-  margin: 0 0 0 15%;
+  margin: 0 0 0 17%;
 }
 
 .latest-movie-description {
   float: right;
   width: 30%;
-  margin: 0 10% 0 0;
+  margin: 0 25% 0 0;
 }
 
 p.home-movie-title {
@@ -10729,6 +10749,10 @@ footer h1 {
   font-style: italic;
   text-align: left;
   width: 100%;
+}
+
+h2.latest-movies {
+  margin-left: 15%;
 }
 
 h3.home {
