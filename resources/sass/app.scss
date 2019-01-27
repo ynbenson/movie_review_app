@@ -9,12 +9,13 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #666666;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 html, body {
-    background-color: #141414;
+    //background-color: #141414;
+  background-color: white;
     color: #636b6f;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
@@ -103,19 +104,22 @@ header .links > a {
 
 .latest-movies-box:after, .latest-movies-box:before {
   position: absolute;
-  width: 15%;
   height: 450px;
   content: '';
+}
+
+.latest-movies-box:before {
+  width: 11%;
+  right: 7%;
   opacity: .5;
   background: #000;
 }
 
-.latest-movies-box:before {
-  right: 0%;
-}
-
 .latest-movies-box:after {
-  left: 0%;
+  width: 11%;
+  left: 7%;
+  opacity: .5;
+  background: #000;
 }
 
 
@@ -182,8 +186,7 @@ btn .btn_unfollow {
 
 .home-movie-thumbnail {
     float: left;
-    //width: 40%;
-    margin: 0 0 0 15%;
+    margin: 0 0 0 17%;
 }
 
 .latest-movie-description {

@@ -77,7 +77,7 @@ class MovieController extends Controller
                 ->where('movie_reviews.movie_id', $id)
                 ->get();
         
-        $summary = $this->get_summary(urlencode($movie->title));
+        $summary = $this->get_summary($movie->title);
 
         $user_id = -1;
         if (Auth::check()){ $user_id = Auth::user()->id; }
