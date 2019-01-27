@@ -10772,3 +10772,76 @@ h3.home::before {
   border-right: solid 20px #959e9b;
 }
 
+.video-container {
+  text-align: center;
+}
+
+.square_btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;
+  /*左線*/
+  color: #ff7c5c;
+  /*文字色*/
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+.square_btn:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.btn_exc {
+  background: #f7f7f7;
+  border-left: solid 6px #009900;
+  /*左線*/
+  color: #009900;
+  /*文字色*/
+}
+
+.btn_great {
+  background: #f7f7f7;
+  border-left: solid 6px #66ccff;
+  /*左線*/
+  color: #66ccff;
+  /*文字色*/
+}
+
+.btn_ok {
+  background: #f7f7f7;
+  border-left: solid 6px gray;
+  /*左線*/
+  color: gray;
+  /*文字色*/
+}
+
+.btn_poor {
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;
+  /*左線*/
+  color: #ff7c5c;
+  /*文字色*/
+}
+
+.btn_awful {
+  background: #f7f7f7;
+  border-left: solid 6px #ff3333;
+  /*左線*/
+  color: #ff3333;
+  /*文字色*/
+}
+
+#outer {
+  width: 100%;
+  text-align: center;
+}
+
+.inner {
+  display: inline-block;
+  margin: 5px 30px 5px 30px;
+}
+
