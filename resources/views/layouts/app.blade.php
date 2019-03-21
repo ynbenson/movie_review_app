@@ -81,8 +81,6 @@
             top: 10px;
             left: 10px;
             z-index: 100;
-            /*transform: translateX(0);*/
-            /*transition: transform .5s;*/
         }
         /*.menu-trigger.active {*/
           /*transform: translateX(-250px);*/
