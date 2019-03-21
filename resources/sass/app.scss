@@ -14,75 +14,69 @@
 }
 
 html, body {
-    //background-color: #141414;
   background-color: white;
-    color: #636b6f;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    height: 100vh;
-    margin: 0;
+  color: #636b6f;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
 }
 
 #wrapper {
-    // width:1060px;
-    width: 100%;
-    margin:0px auto;
+  width: 100%;
+  margin:0px auto;
 }
 
 header {
-    // margin-top: 18px;
-    background-color: #666666;
-    height: 50px;
+  background-color: #1b1e21;
+  height: 50px;
 }
 
 .header-logo {
-    float: left;
-    margin-left: 3%;
-    width: 15%;
-    height: 40px;
-}
-
-.header-logo img {
+  float: left;
+  margin-left: 3%;
+  width: 15%;
+  height: 40px;
 }
 
 .header-r {
-    float: right;
-    text-align: right;
-    line-height: 50px;
-    height: 50px;
-    width: 65%;
+  float: right;
+  text-align: right;
+  line-height: 50px;
+  height: 50px;
+  width: 65%;
 }
 
 header .links > a {
-    color: #64F9C1;
-    padding: 0 25px;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+  color: #64F9C1;
+  padding: 0 25px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 #r-sidebar {
-    float: right;
+  float: right;
 }
 
 .r-sidebar-content {
-    text-align: center;
-    width: 230px;
-    height: 261px;
-    margin: 0px 10px 10px 10px;
+  text-align: center;
+  width: 230px;
+  height: 261px;
+  margin: 0px 10px 10px 10px;
 }
 
 .ads-container {
-    float: right;
-    width: 230px;
-    height: 230px;
-    line-height: 230px;
-    text-align: center;
-    border: dashed 1px #999;
-    margin:10px 0px 10px 10px;
-    background-color: #00FFFF;
+  float: right;
+  width: 230px;
+  height: 230px;
+  line-height: 230px;
+  text-align: center;
+  border: dashed 1px #999;
+  margin:10px 0px 10px 10px;
+  background-color: #00FFFF;
 }
 
 .home-content {
@@ -92,14 +86,14 @@ header .links > a {
 }
 
 .latest-movies-box{
-    float: left;
-    padding: 0em 1em;
-    background: -moz-linear-gradient(#ffb03c, #ff708d);
-    background: -webkit-linear-gradient(#ffb03c, #ff708d);
-    background: linear-gradient(to right, #ffb03c, #ff708d);
-    color: #FFF;
-    width: 100%;
-    height: 450px;
+  float: left;
+  padding: 0em 1em;
+  background: -moz-linear-gradient(#ffb03c, #ff708d);
+  background: -webkit-linear-gradient(#ffb03c, #ff708d);
+  background: linear-gradient(to right, #ffb03c, #ff708d);
+  color: #FFF;
+  width: 100%;
+  height: 450px;
 }
 
 .latest-movies-box:after, .latest-movies-box:before {
@@ -124,25 +118,25 @@ header .links > a {
 
 
 .latest-movies-box p {
-    margin: 0; 
-    padding: 0;
+  margin: 0; 
+  padding: 0;
 }
 
 
 .popular-movies-box{
-    float: left;
-    padding: 0.5em 1em;
-    background: -moz-linear-gradient(#C2EEFF, #ffb03c);
-    background: -webkit-linear-gradient(#C2EEFF, #ffb03c);
-    background: linear-gradient(to right, #C2EEFF, #ffb03c);
-    color: #000000;
-    width: 100%;
-    height: 560px;
+  float: left;
+  padding: 0.5em 1em;
+  background: -moz-linear-gradient(#C2EEFF, #ffb03c);
+  background: -webkit-linear-gradient(#C2EEFF, #ffb03c);
+  background: linear-gradient(to right, #C2EEFF, #ffb03c);
+  color: #000000;
+  width: 100%;
+  height: 560px;
 }
 
 .latest-movies-box p {
-    margin: 0; 
-    padding: 0;
+  margin: 0; 
+  padding: 0;
 }
 
 .recommend-user-list {
@@ -185,8 +179,8 @@ btn .btn_unfollow {
 }
 
 .home-movie-thumbnail {
-    float: left;
-    margin: 0 0 0 17%;
+  float: left;
+  margin: 0 0 0 17%;
 }
 
 .latest-movie-description {
@@ -196,50 +190,50 @@ btn .btn_unfollow {
 }
 
 p.home-movie-title {
-    text-align: center;
-    font-size: 36px;
-    font-style: italic;
-    font-weight: 600;
+  text-align: center;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 600;
 }
 
 p.home-movie-evaluation {
-    float: left;
-    font-style: italic;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    margin: 0 15% 0 0; 
-    padding: 0;
+  float: left;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  margin: 0 15% 0 0; 
+  padding: 0;
 }
 
 p.home-movie-date {
-    float: left;
-    font-style: italic;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    margin: 0 15% 0 0; 
-    padding: 0;
+  float: left;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  margin: 0 15% 0 0; 
+  padding: 0;
 }
 
 footer {
-    border:dashed 1px #999;
-    background-color: #F0E68C;
-    clear:both;
+  border:dashed 1px #999;
+  background-color: #F0E68C;
+  clear:both;
 }
 
 footer h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .title {
-    font-size: 84px;
+  font-size: 84px;
 }
 
 
 
 .m-b-md {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 #mypage-profile {
@@ -271,11 +265,11 @@ footer h1 {
 
 //　Headers
 .home-content h2 {
-    size: 30px;
-    font-weight: 700;
-    font-style: italic;
-    text-align: left;
-    width: 100%;
+  size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  text-align: left;
+  width: 100%;
 }
 
 h2.latest-movies {
@@ -300,65 +294,65 @@ h3.home::before {
 }
 
 .video-container{
-    text-align: center;
+  text-align: center;
 }
 
 .square_btn{
-    display: inline-block;
-    padding: 0.5em 1em;
-    background: #f7f7f7;
-    border-left: solid 6px #ff7c5c;/*左線*/
-    color: #ff7c5c;/*文字色*/
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 }
 
 .square_btn:active {
-    box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
-    transform: translateY(2px);
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
 }
 
 .btn_exc {
-    background: #f7f7f7;
-    border-left: solid 6px #009900;/*左線*/
-    color: #009900;/*文字色*/
+  background: #f7f7f7;
+  border-left: solid 6px #009900;/*左線*/
+  color: #009900;/*文字色*/
 }
 
 .btn_great {
-    background: #f7f7f7;
-    border-left: solid 6px #66ccff;/*左線*/
-    color: #66ccff;/*文字色*/
+  background: #f7f7f7;
+  border-left: solid 6px #66ccff;/*左線*/
+  color: #66ccff;/*文字色*/
 }
 
 .btn_ok {
-    background: #f7f7f7;
-    border-left: solid 6px gray;/*左線*/
-    color: gray;/*文字色*/
+  background: #f7f7f7;
+  border-left: solid 6px gray;/*左線*/
+  color: gray;/*文字色*/
 }
 
 .btn_poor {
-    background: #f7f7f7;
-    border-left: solid 6px #ff7c5c;/*左線*/
-    color: #ff7c5c;/*文字色*/
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
 }        
 
 .btn_awful {
-    background: #f7f7f7;
-    border-left: solid 6px #ff3333;/*左線*/
-    color: #ff3333;/*文字色*/
+  background: #f7f7f7;
+  border-left: solid 6px #ff3333;/*左線*/
+  color: #ff3333;/*文字色*/
 }
 
 #outer
 {
-    width:100%;
-    text-align: center;
+  width:100%;
+  text-align: center;
 }
 
 .inner
 {
-    display: inline-block;
-    margin: 5px 30px 5px 30px;
+  display: inline-block;
+  margin: 5px 30px 5px 30px;
 }
 
 /* nav */
@@ -415,23 +409,23 @@ main p {
   left: 10px;
   z-index: 100;
 }
-/*.menu-trigger.active {*/
-/*transform: translateX(-250px);*/
-/*}*/
+.menu-trigger.active {
+  transform: translateX(-250px);
+}
 .menu-trigger:hover {
-  background: -webkit-repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 5px,#e9f4ff 5px, #e9f4ff 9px);
-  background: repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 5px,#e9f4ff 5px, #e9f4ff 9px);
+  background: -webkit-repeating-linear-gradient(-45deg, #7dc0fa, #7dc0fa 5px,#e9f4ff 5px, #e9f4ff 9px);
+  background: repeating-linear-gradient(-45deg, #7dc0fa, #7dc0fa 5px,#e9f4ff 5px, #e9f4ff 9px);
 }
 
 .menu-trigger span {
-     display: inline-block;
-     box-sizing: border-box;
-     position: absolute;
-     left: 0;
-     width: 100%;
-     height: 4px;
-     background-color: #000;
-     transition: all .5s;
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: all .5s;
  }
 .menu-trigger.active span {
   background-color: #fff;
@@ -485,10 +479,6 @@ nav li {
 nav li a {
   color: white;
 }
-
-/*nav li a {*/
-  /*color: white;*/
-/*}*/
 
 nav li a:hover {
   color: gray;
