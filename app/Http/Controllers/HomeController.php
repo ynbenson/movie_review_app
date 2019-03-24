@@ -7,6 +7,7 @@ use Validator, Input, Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use App\Facades\HttpClientService;
 
 class HomeController extends BaseController
 {
@@ -20,42 +21,20 @@ class HomeController extends BaseController
             }
         }
         
-        $curl = curl_init();
-        $title = urlencode("109445");
+        // TODO move to service?
         $TMDB_API_KEY = env("TMDB_KEY", "default_value");
-        curl_setopt_array($curl, array(
-          CURLOPT_URL => "https://api.themoviedb.org/3/movie/popular?page=1&language=en-US&api_key=$TMDB_API_KEY",
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => "",
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 30,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => "GET",
-          CURLOPT_POSTFIELDS => "{}",
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        if ($err) {
-            echo "cURL Error #:" . $err;
-        } else {
-            $jset = json_decode($response, true);
-            $movies = $jset['results'];
-            $ret = [];
-            foreach($movies as $movie){
-                $arr = array(
-                    "title"         => $movie["title"],
-                    "overview"      => $movie["overview"],
-                    "poster_path"   => "https://image.tmdb.org/t/p/w500".$movie["poster_path"],
-                    "released_at"   => $movie["release_date"],
-                    "vote_avg"      => $movie["vote_average"],
-                );
-                $ret[] = $arr;
-            }
-            unset($movie); 
+        $url = "https://api.themoviedb.org/3/movie/popular?page=1&language=en-US&api_key=$TMDB_API_KEY";
+        $movies = HttpClientService::get($url);
+        $ret = [];
+        foreach($movies as $movie){
+            $arr = array(
+                "title"         => $movie["title"],
+                "overview"      => $movie["overview"],
+                "poster_path"   => "https://image.tmdb.org/t/p/w500".$movie["poster_path"],
+                "released_at"   => $movie["release_date"],
+                "vote_avg"      => $movie["vote_average"],
+            );
+            $ret[] = $arr;
         }
         //dd($ret);
         return view('home', ['reviewed' => $reviewed, 'movies' => $ret]);
