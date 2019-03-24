@@ -11,7 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+require('laravel-mix-eslint');
+
+mix.js('resources/js/app.js', 'public/js').eslint({ fix: false, cache: false })
    .js('node_modules/@glidejs/glide/dist/glide.min.js', 'public/js')
    .js('node_modules/chart.js/dist/Chart.min.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
